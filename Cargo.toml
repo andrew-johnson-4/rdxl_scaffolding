@@ -11,3 +11,7 @@ keywords = ["html","scaffolding","templates"]
 
 [dependencies]
 rdxl = "0.3"
+
+[[bin]]
+name = "build_index"
+path = "src/build_index.rs"

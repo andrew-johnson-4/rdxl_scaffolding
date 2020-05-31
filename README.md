@@ -12,5 +12,5 @@ opinionated UI framework. The concept of "Minimal Common Abstraction" will be th
 herewithin.
 
 ## Contribution
-Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in rdxl by you,
+Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in rdxl_scaffolding by you,
 shall be dual licensed under the MIT and Apache 2.0 license without any additional terms or conditions.
