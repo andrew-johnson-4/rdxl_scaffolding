@@ -28,6 +28,9 @@ fn main() -> std::io::Result<()> {
        <!PhoneNumber number="1-234-567-8901"/>
        <!Website url="https://www.contact.com/johndover"/>
      </Contact>
+     <!Contact person=<!Person name=<!Name name="Jane Doe"/> /> >
+       <!PhoneNumber number="987.654.3210"/>
+     </Contact>
    </ContactList> ).as_bytes())?;
    f.write_all(b"<br/>")?;
 

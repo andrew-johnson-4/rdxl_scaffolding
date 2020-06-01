@@ -16,7 +16,7 @@ xrender!(IndexTabs, <div>
 </div>);
 
 xrender!(ContactList, <ul>
-  {{ for ContactListChildren::Contact(c) in self.children.iter() {{ {{c}} }} }}
+  {{ for ContactListChildren::Contact(c) in self.children.iter() {{ <li>{{c}}</li> }} }}
 </ul>);
 
 xrender!(Contact, <span>
