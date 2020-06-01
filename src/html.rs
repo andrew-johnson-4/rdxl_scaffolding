@@ -14,3 +14,31 @@ xrender!(IndexTabs, <div>
     }} }}
   }} }}
 </div>);
+
+xrender!(ContactList, <ul>
+  {{ for ContactListChildren::Contact(c) in self.children.iter() {{ {{c}} }} }}
+</ul>);
+
+xrender!(Contact, <span>
+   <b>{{ self.person.name.name }}</b>:
+   {{ for ch in self.children.iter() {{
+      {{ if let ContactChildren::Title(t) = ch {{
+        {{ t.title }},
+      }} }}
+   }} }}
+   {{ for ch in self.children.iter() {{
+      {{ if let ContactChildren::Email(e) = ch {{
+        e-mail: {{ e.email }}
+      }} }}
+   }} }}
+   {{ for ch in self.children.iter() {{
+      {{ if let ContactChildren::PhoneNumber(p) = ch {{
+        phone: {{ p.number }}
+      }} }}
+   }} }}
+   {{ for ch in self.children.iter() {{
+      {{ if let ContactChildren::Website(w) = ch {{
+        website: {{ w.url }}
+      }} }}
+   }} }}
+</span>);
