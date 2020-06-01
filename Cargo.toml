@@ -10,7 +10,7 @@ repository = "https://github.com/andrew-johnson-4/rdxl_scaffolding"
 keywords = ["html","scaffolding","templates"]
 
 [dependencies]
-rdxl = "0.3"
+rdxl = "0.3.9"
 
 [[bin]]
 name = "build_index"
