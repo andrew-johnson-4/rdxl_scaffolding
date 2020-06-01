@@ -16,6 +16,7 @@ xtype!(<!Contact person:Person>
    <?PhoneNumber/>
    <?Website/>
 </Contact>);
+xtype!(<!ContactList><?Contact/></ContactList>);
 
 xtype!(<!Date year:u64 month:u64 day:u64/>);
 xtype!(<!Time hour:u64 minute:u64 second:u64/>);
