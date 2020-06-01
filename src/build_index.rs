@@ -21,6 +21,16 @@ fn main() -> std::io::Result<()> {
    </IndexTabs> ).as_bytes())?;
    f.write_all(b"<br/>")?;
 
+   f.write_all(xhtml!( <!ContactList>
+     <!Contact person=<!Person name=<!Name name="John Dover"/>>
+       <Title title="Doctor of Economics"/>
+       <Email email="john.dover@email.com"/>
+       <PhoneNumber number="1-234-567-8901"/>
+       <Website url="https://www.contact.com/johndover"/>
+     </Person> />
+   </ContactList> ).as_bytes())?;
+   f.write_all(b"<br/>")?;
+
    f.write_all(b"</body>")?;
    f.write_all(b"</html>")?;
 
