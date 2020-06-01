@@ -1,6 +1,6 @@
 [package]
 name = "rdxl_scaffolding"
-version = "0.0.7"
+version = "0.0.8"
 authors = ["Andrew <andrew@subarctic.org>"]
 license = "MIT OR Apache-2.0"
 description = "Rdxl Prefabricated HTML Components"
@@ -8,10 +8,15 @@ edition = "2018"
 readme = "README.md"
 repository = "https://github.com/andrew-johnson-4/rdxl_scaffolding"
 keywords = ["html","scaffolding","templates"]
+features = ["debug_html"]
 
 [dependencies]
 rdxl = "0.3.12"
 
+[features]
+debug_html = []
+
 [[bin]]
+required-features = ["debug_html"]
 name = "build_index"
 path = "src/build_index.rs"

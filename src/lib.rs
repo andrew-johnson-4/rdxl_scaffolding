@@ -1,4 +1,6 @@
 use rdxl::xtype;
+
+#[cfg(feature = "debug_html")]
 pub mod html;
 
 xtype!(<!ProgressBar numerator:u64 denominator:u64 unit:String/>);
