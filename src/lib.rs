@@ -8,7 +8,6 @@
 //! ```
 
 use rdxl::xtype;
-use std::fmt::Display;
 
 #[cfg(feature = "debug_html")]
 pub mod html;
