@@ -8,13 +8,15 @@
 //! ```
 
 use rdxl::xtype;
+use std::fmt::Display;
 
 #[cfg(feature = "debug_html")]
 pub mod html;
 
+xtype!(<!IndexTabs><!IndexTab name:String><?/></IndexTab></IndexTabs>);
+
 xtype!(<!ProgressBar numerator:u64 denominator:u64 unit:String/>);
 
-xtype!(<!IndexTabs><!IndexTab name:String/></IndexTabs>);
 
 xtype!(<!Person name:Name/>);
 xtype!(<!Name name:String/>);
