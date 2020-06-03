@@ -1,9 +1,19 @@
+//! # Progress Bar component
+//!
+//! ```
+//! # use rdxl_scaffolding::*;
+//! # fn main() {
+//! ProgressBar { numerator:33, denominator:50, unit:"MB".to_string(), children:vec![] }
+//! # ;}
+//! ```
+
 use rdxl::xtype;
 
 #[cfg(feature = "debug_html")]
 pub mod html;
 
 xtype!(<!ProgressBar numerator:u64 denominator:u64 unit:String/>);
+
 xtype!(<!IndexTabs><!IndexTab name:String/></IndexTabs>);
 
 xtype!(<!Person name:Name/>);
