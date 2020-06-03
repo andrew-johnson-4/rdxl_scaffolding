@@ -13,6 +13,7 @@ use rdxl::xtype;
 pub mod html;
 
 xtype!(<!IndexTabs><!IndexTab name:String><?/></IndexTab></IndexTabs>);
+xtype!(<!Table><!TableRow><!TableCell><?/></TableCell></TableRow></Table>);
 
 xtype!(<!ProgressBar numerator:u64 denominator:u64 unit:String/>);
 
