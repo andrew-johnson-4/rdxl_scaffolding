@@ -14,7 +14,11 @@ pub mod html;
 
 xtype!(<!IndexTabs><!IndexTab name:String><?/></IndexTab></IndexTabs>);
 xtype!(<!Table><!TableRow><!TableCell><?/></TableCell></TableRow></Table>);
-
+xtype!(<!List><!ListItem><?/></ListItem></List>);
+xtype!(<!BarGraph xunit:String yunit:String><!BarGraphItem x:String y:f64/></BarGraph>);
+xtype!(<!Histogram xunit:String yunit:String><!HistogramItem xmin:f64 xmax:f64 y:f64/></Histogram>);
+xtype!(<!PieChart><!PieChartItem xtag:String y:f64/></PieChart>);
+xtype!(<!LineGraph xunit:String yunit:String><!LineGraphLine f:String/></LineGraph>);
 xtype!(<!ProgressBar numerator:u64 denominator:u64 unit:String/>);
 
 
