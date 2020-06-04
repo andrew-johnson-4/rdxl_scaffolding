@@ -13,17 +13,24 @@ use rdxl::xtype;
 pub mod html;
 
 xtype!(<!IndexTabs><!IndexTab name:String><?/></IndexTab></IndexTabs>);
+xtype!(<!Collapse><!CollapseHead name:String><?/></CollapseHead><!CollapseBody name:String><?/></CollapseBody></Collapse>);
+xtype!(<!DropDown><!DropDownHead name:String><?/></DropDownHead><!DropDownBody name:String><?/></DropDownBody></DropDown>);
 xtype!(<!Table><!TableRow><!TableCell><?/></TableCell></TableRow></Table>);
 xtype!(<!List><!ListItem><?/></ListItem></List>);
+xtype!(<!Card><?Image/><?/></Card>);
+xtype!(<!Carousel><!CarouselSlide><?Image/><?/></CarouselSlide></Carousel>);
+
 xtype!(<!BarGraph xunit:String yunit:String><!BarGraphItem x:String y:f64/></BarGraph>);
 xtype!(<!Histogram xunit:String yunit:String><!HistogramItem xmin:f64 xmax:f64 y:f64/></Histogram>);
 xtype!(<!PieChart><!PieChartItem xtag:String y:f64/></PieChart>);
 xtype!(<!LineGraph xunit:String yunit:String><!LineGraphLine f:String/></LineGraph>);
 
-xtype!(<!Alert message:String/>);
-xtype!(<!Tooltip message:String/>);
+xtype!(<!Alert message:String><?/></Alert>);
+xtype!(<!Tooltip message:String><?/></Tooltip>);
+xtype!(<!BreadCrumb active:String><!BreadCrumbItem name:String><?/></BreadCrumbItem></BreadCrumb>);
 
 xtype!(<!InputButton name:String/>);
+xtype!(<!InputButtonGroup><?InputButton/></InputButtonGroup>);
 xtype!(<!InputCheckbox name:String/>);
 xtype!(<!InputColor name:String/>);
 xtype!(<!InputDate name:String/>);
@@ -47,6 +54,7 @@ xtype!(<!InputWeek name:String/>);
 xtype!(<!ProgressBar numerator:u64 denominator:u64 unit:String/>);
 xtype!(<!Image name:String/>);
 xtype!(<!Icon name:String/>);
+xtype!(<!Badge name:String/>);
 
 xtype!(<!Person name:Name/>);
 xtype!(<!Name name:String/>);
