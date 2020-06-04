@@ -1,6 +1,6 @@
 [package]
 name = "rdxl_scaffolding"
-version = "0.0.12"
+version = "0.0.13"
 authors = ["Andrew <andrew@subarctic.org>"]
 license = "MIT OR Apache-2.0"
 description = "Rdxl Prefabricated HTML Components"
