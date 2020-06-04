@@ -21,7 +21,7 @@ xtype!(<!PieChart><!PieChartItem xtag:String y:f64/></PieChart>);
 xtype!(<!LineGraph xunit:String yunit:String><!LineGraphLine f:String/></LineGraph>);
 
 xtype!(<!Alert message:String/>);
-xtype!(<!ProgressBar numerator:u64 denominator:u64 unit:String/>);
+xtype!(<!Tooltip message:String/>);
 
 xtype!(<!InputButton name:String/>);
 xtype!(<!InputCheckbox name:String/>);
@@ -44,6 +44,7 @@ xtype!(<!InputTime name:String/>);
 xtype!(<!InputUrl name:String/>);
 xtype!(<!InputWeek name:String/>);
 
+xtype!(<!ProgressBar numerator:u64 denominator:u64 unit:String/>);
 xtype!(<!Image name:String/>);
 xtype!(<!Icon name:String/>);
 
