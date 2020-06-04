@@ -19,8 +19,30 @@ xtype!(<!BarGraph xunit:String yunit:String><!BarGraphItem x:String y:f64/></Bar
 xtype!(<!Histogram xunit:String yunit:String><!HistogramItem xmin:f64 xmax:f64 y:f64/></Histogram>);
 xtype!(<!PieChart><!PieChartItem xtag:String y:f64/></PieChart>);
 xtype!(<!LineGraph xunit:String yunit:String><!LineGraphLine f:String/></LineGraph>);
+
+xtype!(<!Alert message:String/>);
 xtype!(<!ProgressBar numerator:u64 denominator:u64 unit:String/>);
 
+xtype!(<!InputButton name:String/>);
+xtype!(<!InputCheckbox name:String/>);
+xtype!(<!InputColor name:String/>);
+xtype!(<!InputDate name:String/>);
+xtype!(<!InputDatetime name:String/>);
+xtype!(<!InputEmail name:String/>);
+xtype!(<!InputFile name:String/>);
+xtype!(<!InputImage name:String/>);
+xtype!(<!InputMonth name:String/>);
+xtype!(<!InputNumber name:String/>);
+xtype!(<!InputPassword name:String/>);
+xtype!(<!InputRadio name:String><!InputRadioOption value:String/></InputRadio>);
+xtype!(<!InputRange name:String min:u64 max:u64/>);
+xtype!(<!InputSearch name:String/>);
+xtype!(<!InputSubmit/>);
+xtype!(<!InputTelephoneNumber name:String/>);
+xtype!(<!InputText name:String/>);
+xtype!(<!InputTime name:String/>);
+xtype!(<!InputUrl name:String/>);
+xtype!(<!InputWeek name:String/>);
 
 xtype!(<!Person name:Name/>);
 xtype!(<!Name name:String/>);
