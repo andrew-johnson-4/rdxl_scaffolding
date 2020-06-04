@@ -1,4 +1,7 @@
-# Rdxl Scaffolding
+Rdxl Scaffolding
+================
+
+[![Crates.IO](https://img.shields.io/crates/v/rdxl_scaffolding.svg)](https://crates.rs/crates/rdxl_scaffolding)
 
 Prefabricated HTML components
 
