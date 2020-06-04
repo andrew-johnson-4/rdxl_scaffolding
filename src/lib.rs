@@ -44,6 +44,7 @@ xtype!(<!InputTime name:String/>);
 xtype!(<!InputUrl name:String/>);
 xtype!(<!InputWeek name:String/>);
 
+xtype!(<!Image name:String/>);
 xtype!(<!Icon name:String/>);
 
 xtype!(<!Person name:Name/>);
