@@ -2,6 +2,7 @@ Rdxl Scaffolding
 ================
 
 [![Crates.IO](https://img.shields.io/crates/v/rdxl_scaffolding.svg)](https://crates.rs/crates/rdxl_scaffolding)
+[![Documentation](https://img.shields.io/badge/api-rustdoc-blue.svg)](https://docs.rs/rdxl)
 [![Build Nightly](https://github.com/andrew-johnson-4/rdxl_scaffolding/workflows/BuildNightly/badge.svg)](https://github.com/andrew-johnson-4/rdxl_scaffolding)
 [![Build](https://github.com/andrew-johnson-4/rdxl_scaffolding/workflows/Build/badge.svg)](https://github.com/andrew-johnson-4/rdxl_scaffolding)
 
