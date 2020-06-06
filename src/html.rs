@@ -2,6 +2,31 @@ use rdxl::xrender;
 use crate::*;
 use std::time::SystemTime;
 
+xrender!(InputButton, <input type="button" name={{ format!("'{}'",self.name) }} value={{ format!("'{}'",self.name) }}/>);
+/*
+xtype!(<!InputButton name:String/>);
+xtype!(<!InputButtonGroup><?InputButton/></InputButtonGroup>);
+xtype!(<!InputCheckbox name:String/>);
+xtype!(<!InputColor name:String/>);
+xtype!(<!InputDate name:String/>);
+xtype!(<!InputDatetime name:String/>);
+xtype!(<!InputEmail name:String/>);
+xtype!(<!InputFile name:String/>);
+xtype!(<!InputImage name:String/>);
+xtype!(<!InputMonth name:String/>);
+xtype!(<!InputNumber name:String/>);
+xtype!(<!InputPassword name:String/>);
+xtype!(<!InputRadio name:String><!InputRadioOption value:String/></InputRadio>);
+xtype!(<!InputRange name:String min:u64 max:u64/>);
+xtype!(<!InputSearch name:String/>);
+xtype!(<!InputSubmit/>);
+xtype!(<!InputTelephoneNumber name:String/>);
+xtype!(<!InputText name:String/>);
+xtype!(<!InputTime name:String/>);
+xtype!(<!InputUrl name:String/>);
+xtype!(<!InputWeek name:String/>);
+*/
+
 fn unique_identifier(prefix: &str) -> String {
    let e = SystemTime::now().duration_since(SystemTime::UNIX_EPOCH);
    if let Ok(e) = e {
@@ -12,7 +37,10 @@ fn unique_identifier(prefix: &str) -> String {
 }
 
 fn show_hide_js(class_name:&str, id_name:&str) -> String {
-   format!(r#"'let cs = document.getElementsByClassName("{}"); for(var ci=0; ci<cs.length; ci++){{ cs[ci].style.display = "none"; }} document.getElementById("{}").style.display = "initial";'"#, class_name, id_name)
+   format!(r#"'
+let cs = document.getElementsByClassName("{}");
+for(var ci=0; ci<cs.length; ci++){{ cs[ci].style.display = "none"; }}
+document.getElementById("{}").style.display = "initial";'"#, class_name, id_name)
 }
 
 xrender!(ProgressBar, <div style="position:relative; height:30px; width:300px; background-color:#CCCCCC;">
@@ -25,7 +53,7 @@ xrender!(IndexTabs, <div>
   {{ for (tabi,tab) in self.children.iter().enumerate() {{
     {{ if let IndexTabsChildren::IndexTab(tab) = tab {{
       {{ let tab_id = format!("{}_{}", tabs_classname, tabi); }}
-      <div style="float:left; margin-left:5px; background-color:#CCCCCC;"
+      <div style="float:left; margin-left:5px; padding:4px; cursor:pointer; background-color:#CCCCCC;"
            onclick={{ show_hide_js(&tabs_classname, &tab_id) }}>
            {{ tab.name }}
       </div>

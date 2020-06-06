@@ -10,33 +10,56 @@ fn main() -> std::io::Result<()> {
    f.write_all(b"<html>")?;
    f.write_all(b"<body>")?;
 
-   //f.write_all(xhtml!( <!ProgressBar numerator=312 denominator=1532 unit="MB"/> ).as_bytes())?;
-   //f.write_all(b"<br/>")?;
-
    f.write_all(xhtml!( <!IndexTabs>
      <!IndexTab name="Input Elements">
        <?>
-         <h2>Input Elements</h2>
+         <h3>Input Elements</h3>
+         <!InputButton name="Button"/>
+/*
+xtype!(<!InputButtonGroup><?InputButton/></InputButtonGroup>);
+xtype!(<!InputCheckbox name:String/>);
+xtype!(<!InputColor name:String/>);
+xtype!(<!InputDate name:String/>);
+xtype!(<!InputDatetime name:String/>);
+xtype!(<!InputEmail name:String/>);
+xtype!(<!InputFile name:String/>);
+xtype!(<!InputImage name:String/>);
+xtype!(<!InputMonth name:String/>);
+xtype!(<!InputNumber name:String/>);
+xtype!(<!InputPassword name:String/>);
+xtype!(<!InputRadio name:String><!InputRadioOption value:String/></InputRadio>);
+xtype!(<!InputRange name:String min:u64 max:u64/>);
+xtype!(<!InputSearch name:String/>);
+xtype!(<!InputSubmit/>);
+xtype!(<!InputTelephoneNumber name:String/>);
+xtype!(<!InputText name:String/>);
+xtype!(<!InputTime name:String/>);
+xtype!(<!InputUrl name:String/>);
+xtype!(<!InputWeek name:String/>);
+*/
        </?>
      </IndexTab>
      <!IndexTab name="Tab B">
        <?>
-         <h2>Tab B</h2>
+         <h3>Tab B</h3>
        </?>
      </IndexTab>
      <!IndexTab name="Tab C">
        <?>
-         <h2>Tab C</h2>
+         <h3>Tab C</h3>
        </?>
      </IndexTab>
      <!IndexTab name="Tab D">
        <?>
-         <h2>Tab D</h2>
+         <h3>Tab D</h3>
        </?>
      </IndexTab>
    </IndexTabs> ).as_bytes())?;
 
    /*
+   f.write_all(xhtml!( <!ProgressBar numerator=312 denominator=1532 unit="MB"/> ).as_bytes())?;
+   f.write_all(b"<br/>")?;
+
    f.write_all(xhtml!( <!ContactList>
      <!Contact person=<!Person name=<!Name name="John Dover"/> /> >
        <!Title title="Doctor of Economics"/>
