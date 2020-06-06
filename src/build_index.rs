@@ -10,8 +10,8 @@ fn main() -> std::io::Result<()> {
    f.write_all(b"<html>")?;
    f.write_all(b"<body>")?;
 
-   f.write_all(xhtml!( <!ProgressBar numerator=312 denominator=1532 unit="MB"/> ).as_bytes())?;
-   f.write_all(b"<br/>")?;
+   //f.write_all(xhtml!( <!ProgressBar numerator=312 denominator=1532 unit="MB"/> ).as_bytes())?;
+   //f.write_all(b"<br/>")?;
 
    f.write_all(xhtml!( <!IndexTabs>
      <!IndexTab name="Input Elements">
@@ -35,8 +35,8 @@ fn main() -> std::io::Result<()> {
        </?>
      </IndexTab>
    </IndexTabs> ).as_bytes())?;
-   f.write_all(b"<br/>")?;
 
+   /*
    f.write_all(xhtml!( <!ContactList>
      <!Contact person=<!Person name=<!Name name="John Dover"/> /> >
        <!Title title="Doctor of Economics"/>
@@ -49,6 +49,7 @@ fn main() -> std::io::Result<()> {
      </Contact>
    </ContactList> ).as_bytes())?;
    f.write_all(b"<br/>")?;
+   */
 
    f.write_all(b"</body>")?;
    f.write_all(b"</html>")?;
