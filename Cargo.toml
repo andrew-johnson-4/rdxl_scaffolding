@@ -11,7 +11,7 @@ keywords = ["html","scaffolding","templates"]
 features = ["debug_html"]
 
 [dependencies]
-rdxl = "0.4.6"
+rdxl = "0.4.9"
 
 [features]
 debug_html = []

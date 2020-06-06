@@ -14,10 +14,26 @@ fn main() -> std::io::Result<()> {
    f.write_all(b"<br/>")?;
 
    f.write_all(xhtml!( <!IndexTabs>
-     <!IndexTab name="Tab A"/>
-     <!IndexTab name="Tab B"/>
-     <!IndexTab name="Tab C"/>
-     <!IndexTab name="Tab D"/>
+     <!IndexTab name="Input Elements">
+       <?>
+         <h2>Input Elements</h2>
+       </?>
+     </IndexTab>
+     <!IndexTab name="Tab B">
+       <?>
+         <h2>Tab B</h2>
+       </?>
+     </IndexTab>
+     <!IndexTab name="Tab C">
+       <?>
+         <h2>Tab C</h2>
+       </?>
+     </IndexTab>
+     <!IndexTab name="Tab D">
+       <?>
+         <h2>Tab D</h2>
+       </?>
+     </IndexTab>
    </IndexTabs> ).as_bytes())?;
    f.write_all(b"<br/>")?;
 
