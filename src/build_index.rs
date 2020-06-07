@@ -17,6 +17,7 @@ fn main() -> std::io::Result<()> {
    f.write_all(b"</head>")?;
    f.write_all(b"<body>")?;
    f.write_all(br#"<div class="container">"#)?;
+   f.write_all(br#"<h2><a href="https://crates.io/crates/rdxl">Rdxl Templating Examples</a></h2>"#)?;
 
    f.write_all(xhtml!( <!IndexTabs>
      <!IndexTab name="Input Elements">
@@ -85,11 +86,6 @@ fn main() -> std::io::Result<()> {
             <!PostalCode><!ZipCode code="02030"/></PostalCode>
           </Address>
         </AddressList></p>
-       </?>
-     </IndexTab>
-     <!IndexTab name="Tab D">
-       <?>
-         <h3>Tab D</h3>
        </?>
      </IndexTab>
    </IndexTabs> ).as_bytes())?;
