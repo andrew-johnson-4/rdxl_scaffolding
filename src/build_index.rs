@@ -56,14 +56,26 @@ fn main() -> std::io::Result<()> {
          <p>Submit Input: <!InputSubmit/></p>
        </?>
      </IndexTab>
-     <!IndexTab name="Tab B">
+     <!IndexTab name="Miscellaneous Components">
        <?>
          <h3>Tab B</h3>
+         <p>Progress Bar: <!ProgressBar numerator=312 denominator=1532 unit="MB"/></p>
        </?>
      </IndexTab>
-     <!IndexTab name="Tab C">
+     <!IndexTab name="Dataset Components">
        <?>
          <h3>Tab C</h3>
+         <p>Contact List: <!ContactList>
+           <!Contact person=<!Person name=<!Name name="John Dover"/> /> >
+             <!Title title="Doctor of Economics"/>
+             <!Email email="john.dover@email.com"/>
+             <!PhoneNumber number="1-234-567-8901"/>
+             <!Website url="https://www.contact.com/johndover"/>
+           </Contact>
+           <!Contact person=<!Person name=<!Name name="Jane Doe"/> /> >
+             <!PhoneNumber number="987.654.3210"/>
+          </Contact>
+        </ContactList></p>
        </?>
      </IndexTab>
      <!IndexTab name="Tab D">
@@ -72,24 +84,6 @@ fn main() -> std::io::Result<()> {
        </?>
      </IndexTab>
    </IndexTabs> ).as_bytes())?;
-
-   /*
-   f.write_all(xhtml!( <!ProgressBar numerator=312 denominator=1532 unit="MB"/> ).as_bytes())?;
-   f.write_all(b"<br/>")?;
-
-   f.write_all(xhtml!( <!ContactList>
-     <!Contact person=<!Person name=<!Name name="John Dover"/> /> >
-       <!Title title="Doctor of Economics"/>
-       <!Email email="john.dover@email.com"/>
-       <!PhoneNumber number="1-234-567-8901"/>
-       <!Website url="https://www.contact.com/johndover"/>
-     </Contact>
-     <!Contact person=<!Person name=<!Name name="Jane Doe"/> /> >
-       <!PhoneNumber number="987.654.3210"/>
-     </Contact>
-   </ContactList> ).as_bytes())?;
-   f.write_all(b"<br/>")?;
-   */
 
    f.write_all(b"</div>")?;
    f.write_all(b"</body>")?;
