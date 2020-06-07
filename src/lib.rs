@@ -8,8 +8,6 @@
 //! ```
 
 use rdxl::xtype;
-
-#[cfg(feature = "debug_html")]
 pub mod html;
 
 xtype!(<!IndexTabs><!IndexTab name:String><?/></IndexTab></IndexTabs>);
