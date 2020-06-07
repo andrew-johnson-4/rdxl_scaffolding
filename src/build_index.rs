@@ -15,27 +15,28 @@ fn main() -> std::io::Result<()> {
        <?>
          <h3>Input Elements</h3>
          <!InputButton name="Button"/>
-         <!InputCheckbox name="Checkbox"/>
-         <!InputButtonGroup>
+         <p>Checkbox: <!InputCheckbox name="Checkbox"/></p>
+         <p>Button Group: <!InputButtonGroup>
            <!InputButton name="GroupButton1"/>
            <!InputButton name="GroupButton2"/>
-         </InputButtonGroup>
+         </InputButtonGroup></p>
+         <p>Text Input: <!InputText name="Text"/></p>
+         <p>Email Input: <!InputEmail name="Email"/></p>
+         <p>Search Input: <!InputSearch name="Search"/></p>
+         <p>Password Input: <!InputPassword name="Password"/></p>
+
 /*
 xtype!(<!InputColor name:String/>);
 xtype!(<!InputDate name:String/>);
 xtype!(<!InputDatetime name:String/>);
-xtype!(<!InputEmail name:String/>);
 xtype!(<!InputFile name:String/>);
 xtype!(<!InputImage name:String/>);
 xtype!(<!InputMonth name:String/>);
 xtype!(<!InputNumber name:String/>);
-xtype!(<!InputPassword name:String/>);
 xtype!(<!InputRadio name:String><!InputRadioOption value:String/></InputRadio>);
 xtype!(<!InputRange name:String min:u64 max:u64/>);
-xtype!(<!InputSearch name:String/>);
 xtype!(<!InputSubmit/>);
 xtype!(<!InputTelephoneNumber name:String/>);
-xtype!(<!InputText name:String/>);
 xtype!(<!InputTime name:String/>);
 xtype!(<!InputUrl name:String/>);
 xtype!(<!InputWeek name:String/>);

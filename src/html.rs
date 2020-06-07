@@ -27,23 +27,23 @@ xrender!(InputButtonGroup, <span style="background-color:#CCCCCC;">
     {{ b }}
   }} }}
 </span>);
+xrender!(InputText, <input type="text" name={{ format!("'{}'",self.name) }}/>);
+xrender!(InputEmail, <input type="email" name={{ format!("'{}'",self.name) }}/>);
+xrender!(InputSearch, <input type="search" name={{ format!("'{}'",self.name) }}/>);
+xrender!(InputPassword, <input type="password" name={{ format!("'{}'",self.name) }}/>);
 
 /*
 xtype!(<!InputColor name:String/>);
 xtype!(<!InputDate name:String/>);
 xtype!(<!InputDatetime name:String/>);
-xtype!(<!InputEmail name:String/>);
 xtype!(<!InputFile name:String/>);
 xtype!(<!InputImage name:String/>);
 xtype!(<!InputMonth name:String/>);
 xtype!(<!InputNumber name:String/>);
-xtype!(<!InputPassword name:String/>);
 xtype!(<!InputRadio name:String><!InputRadioOption value:String/></InputRadio>);
 xtype!(<!InputRange name:String min:u64 max:u64/>);
-xtype!(<!InputSearch name:String/>);
 xtype!(<!InputSubmit/>);
 xtype!(<!InputTelephoneNumber name:String/>);
-xtype!(<!InputText name:String/>);
 xtype!(<!InputTime name:String/>);
 xtype!(<!InputUrl name:String/>);
 xtype!(<!InputWeek name:String/>);
