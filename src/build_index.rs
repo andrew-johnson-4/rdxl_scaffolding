@@ -58,13 +58,13 @@ fn main() -> std::io::Result<()> {
      </IndexTab>
      <!IndexTab name="Miscellaneous Elements">
        <?>
-         <h3>Tab B</h3>
+         <h3>Miscellaneous Elements</h3>
          <p>Progress Bar: <!ProgressBar numerator=312 denominator=1532 unit="MB"/></p>
        </?>
      </IndexTab>
      <!IndexTab name="Dataset Elements">
        <?>
-         <h3>Tab C</h3>
+         <h3>Dataset Elements</h3>
          <p>Contact List: <!ContactList>
            <!Contact person=<!Person name=<!Name name="John Dover"/> /> >
              <!Title title="Doctor of Economics"/>
