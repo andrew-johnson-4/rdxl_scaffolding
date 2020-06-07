@@ -27,27 +27,31 @@ xrender!(InputButtonGroup, <span style="background-color:#CCCCCC;">
     {{ b }}
   }} }}
 </span>);
+xrender!(InputRadio, <span style="background-color:#CCCCCC;">
+  {{ for rc in self.children.iter() {{
+    {{ let InputRadioChildren::InputRadioOption(r) = rc; }}
+    <input type="radio" name={{ format!(r#""{}""#, self.name) }} value={{ format!(r#""{}""#, r.value) }}/>
+  }} }}
+</span>);
 xrender!(InputText, <input type="text" name={{ format!("'{}'",self.name) }}/>);
 xrender!(InputEmail, <input type="email" name={{ format!("'{}'",self.name) }}/>);
 xrender!(InputSearch, <input type="search" name={{ format!("'{}'",self.name) }}/>);
 xrender!(InputPassword, <input type="password" name={{ format!("'{}'",self.name) }}/>);
+xrender!(InputNumber, <input type="number" name={{ format!("'{}'",self.name) }}/>);
+xrender!(InputTelephoneNumber, <input type="tel" name={{ format!("'{}'",self.name) }}/>);
+xrender!(InputUrl, <input type="url" name={{ format!("'{}'",self.name) }}/>);
+xrender!(InputRange, <input type="range" name={{ format!("'{}'",self.name) }} min={{self.min}} max={{self.max}}/>);
+xrender!(InputColor, <input type="color" name={{ format!("'{}'",self.name) }}/>);
+xrender!(InputDate, <input type="date" name={{ format!("'{}'",self.name) }}/>);
+xrender!(InputDatetime, <input type="datetime-local" name={{ format!("'{}'",self.name) }}/>);
+xrender!(InputMonth, <input type="month" name={{ format!("'{}'",self.name) }}/>);
+xrender!(InputWeek, <input type="week" name={{ format!("'{}'",self.name) }}/>);
+xrender!(InputTime, <input type="time" name={{ format!("'{}'",self.name) }}/>);
 
-/*
-xtype!(<!InputColor name:String/>);
-xtype!(<!InputDate name:String/>);
-xtype!(<!InputDatetime name:String/>);
-xtype!(<!InputFile name:String/>);
-xtype!(<!InputImage name:String/>);
-xtype!(<!InputMonth name:String/>);
-xtype!(<!InputNumber name:String/>);
-xtype!(<!InputRadio name:String><!InputRadioOption value:String/></InputRadio>);
-xtype!(<!InputRange name:String min:u64 max:u64/>);
-xtype!(<!InputSubmit/>);
-xtype!(<!InputTelephoneNumber name:String/>);
-xtype!(<!InputTime name:String/>);
-xtype!(<!InputUrl name:String/>);
-xtype!(<!InputWeek name:String/>);
-*/
+xrender!(InputFile, <input type="file" name={{ format!("'{}'",self.name) }}/>);
+xrender!(InputImage, <input type="image" name={{ format!("'{}'",self.name) }}/>);
+
+xrender!(InputSubmit, <input type="submit"/>);
 
 xrender!(ProgressBar, <div style="position:relative; height:30px; width:300px; background-color:#CCCCCC;">
   <div style={{ format!("\"position:absolute; top:0; left:0; height:30px; width:{}px; background-color:#999999;\"", self.numerator*300/self.denominator ) }}></div>

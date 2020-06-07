@@ -24,23 +24,28 @@ fn main() -> std::io::Result<()> {
          <p>Email Input: <!InputEmail name="Email"/></p>
          <p>Search Input: <!InputSearch name="Search"/></p>
          <p>Password Input: <!InputPassword name="Password"/></p>
+         <p>Number Input: <!InputNumber name="Number"/></p>
+         <p>Telephone Input: <!InputTelephoneNumber name="Telephone"/></p>
+         <p>Url Input: <!InputUrl name="Url"/></p>
+         <p>Range Input: <!InputRange name="Range" min=4 max=11/></p>
 
-/*
-xtype!(<!InputColor name:String/>);
-xtype!(<!InputDate name:String/>);
-xtype!(<!InputDatetime name:String/>);
-xtype!(<!InputFile name:String/>);
-xtype!(<!InputImage name:String/>);
-xtype!(<!InputMonth name:String/>);
-xtype!(<!InputNumber name:String/>);
-xtype!(<!InputRadio name:String><!InputRadioOption value:String/></InputRadio>);
-xtype!(<!InputRange name:String min:u64 max:u64/>);
-xtype!(<!InputSubmit/>);
-xtype!(<!InputTelephoneNumber name:String/>);
-xtype!(<!InputTime name:String/>);
-xtype!(<!InputUrl name:String/>);
-xtype!(<!InputWeek name:String/>);
-*/
+         <p>Color Input: <!InputColor name="Color"/></p>
+         <p>Date Input: <!InputDate name="Date"/></p>
+         <p>Datetime Input: <!InputDatetime name="Datetime"/></p>
+         <p>Month Input: <!InputMonth name="Month"/></p>
+         <p>Week Input: <!InputWeek name="Week"/></p>
+         <p>Time Input: <!InputTime name="Time"/></p>
+
+         <p>File Input: <!InputFile name="File"/></p>
+         <p>Image Input: <!InputImage name="Image"/></p>
+
+         <p>Radio Input: <!InputRadio name="Radio">
+           <!InputRadioOption value="A"/>
+           <!InputRadioOption value="B"/>
+           <!InputRadioOption value="C"/>
+         </InputRadio></p>
+
+         <p>Submit Input: <!InputSubmit/></p>
        </?>
      </IndexTab>
      <!IndexTab name="Tab B">
