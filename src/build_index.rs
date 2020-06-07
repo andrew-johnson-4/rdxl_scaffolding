@@ -15,9 +15,9 @@ fn main() -> std::io::Result<()> {
        <?>
          <h3>Input Elements</h3>
          <!InputButton name="Button"/>
+         <!InputCheckbox name="Checkbox"/>
 /*
 xtype!(<!InputButtonGroup><?InputButton/></InputButtonGroup>);
-xtype!(<!InputCheckbox name:String/>);
 xtype!(<!InputColor name:String/>);
 xtype!(<!InputDate name:String/>);
 xtype!(<!InputDatetime name:String/>);

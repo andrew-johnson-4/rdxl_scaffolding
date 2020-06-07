@@ -3,10 +3,9 @@ use crate::*;
 use std::time::SystemTime;
 
 xrender!(InputButton, <input type="button" name={{ format!("'{}'",self.name) }} value={{ format!("'{}'",self.name) }}/>);
+xrender!(InputCheckbox, <input type="checkbox" name={{ format!("'{}'",self.name) }}/>);
 /*
-xtype!(<!InputButton name:String/>);
 xtype!(<!InputButtonGroup><?InputButton/></InputButtonGroup>);
-xtype!(<!InputCheckbox name:String/>);
 xtype!(<!InputColor name:String/>);
 xtype!(<!InputDate name:String/>);
 xtype!(<!InputDatetime name:String/>);
