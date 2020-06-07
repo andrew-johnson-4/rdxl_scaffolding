@@ -58,27 +58,29 @@ xrender!(ProgressBar, <div style="position:relative; height:30px; width:300px; b
   <div style="line-height:30px; width:300px; text-align:center; font-family:sans;">{{ self.numerator }} / {{ self.denominator }} {{ self.unit }}</div>
 </div>);
 
-xrender!(IndexTabs, <div>
+xrender!(IndexTabs, <div style="padding-top:10px;">
   {{ let tabs_classname = unique_identifier("index_tabs"); }}
   {{ for (tabi,tab) in self.children.iter().enumerate() {{
     {{ let IndexTabsChildren::IndexTab(tab) = tab }}
     {{ let tab_id = format!("{}_{}", tabs_classname, tabi); }}
-    <div style="float:left; margin-left:5px; padding:4px; cursor:pointer; background-color:#CCCCCC;"
+    <div style="float:left; margin-right:3px; padding:4px; border:2px solid #EEEEEE; border-radius:5px 5px 0 0; cursor:pointer;"
          onclick={{ show_hide_js(&tabs_classname, &tab_id) }}>
          {{ tab.name }}
     </div>
   }} }}
   <div style="clear:both;"></div>
-  {{ for (tabi,tab) in self.children.iter().enumerate() {{
-    {{ let tab_id = format!("{}_{}", tabs_classname, tabi); }}
-    {{ let IndexTabsChildren::IndexTab(tab) = tab; }}
-    <div id={{tab_id}} class={{tabs_classname}} style={{ if tabi==0 {{"''"}} else {{"'display:none'"}} }}>
-      {{ for tc in tab.children.iter() {{
-        {{ let IndexTabChildren::Display(d) = tc; }}
-        {{ d }}
-      }} }}
-    </div>
-  }} }}
+  <div style="padding:10px; background-color:#F0F0F0;">
+    {{ for (tabi,tab) in self.children.iter().enumerate() {{
+      {{ let tab_id = format!("{}_{}", tabs_classname, tabi); }}
+      {{ let IndexTabsChildren::IndexTab(tab) = tab; }}
+      <div id={{tab_id}} class={{tabs_classname}} style={{ if tabi==0 {{"''"}} else {{"'display:none'"}} }}>
+        {{ for tc in tab.children.iter() {{
+          {{ let IndexTabChildren::Display(d) = tc; }}
+          {{ d }}
+        }} }}
+      </div>
+    }} }}
+  </div>
 </div>);
 
 xrender!(ContactList, <ul>
