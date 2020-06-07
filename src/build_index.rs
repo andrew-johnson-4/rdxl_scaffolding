@@ -7,11 +7,16 @@ use rdxl_scaffolding::*;
 fn main() -> std::io::Result<()> {
    let mut f = File::create("index.html")?;
 
-   f.write_all(b"<html>")?;
+   f.write_all(b"<!doctype html>")?;
+   f.write_all(br#"<html lang="en">"#)?;
    f.write_all(b"<head>")?;
+   f.write_all(br#"<meta charset="utf-8">"#)?;
+   f.write_all(br#"<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">"#)?;
    f.write_all(br#"<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">"#)?;
+   f.write_all(b"<title>Example HTML</title>")?;
    f.write_all(b"</head>")?;
    f.write_all(b"<body>")?;
+   f.write_all(br#"<div class="container">"#)?;
 
    f.write_all(xhtml!( <!IndexTabs>
      <!IndexTab name="Input Elements">
@@ -86,6 +91,7 @@ fn main() -> std::io::Result<()> {
    f.write_all(b"<br/>")?;
    */
 
+   f.write_all(b"</div>")?;
    f.write_all(b"</body>")?;
    f.write_all(b"</html>")?;
 
