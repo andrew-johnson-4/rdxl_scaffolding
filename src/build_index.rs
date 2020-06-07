@@ -56,13 +56,13 @@ fn main() -> std::io::Result<()> {
          <p>Submit Input: <!InputSubmit/></p>
        </?>
      </IndexTab>
-     <!IndexTab name="Miscellaneous Components">
+     <!IndexTab name="Miscellaneous Elements">
        <?>
          <h3>Tab B</h3>
          <p>Progress Bar: <!ProgressBar numerator=312 denominator=1532 unit="MB"/></p>
        </?>
      </IndexTab>
-     <!IndexTab name="Dataset Components">
+     <!IndexTab name="Dataset Elements">
        <?>
          <h3>Tab C</h3>
          <p>Contact List: <!ContactList>

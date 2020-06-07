@@ -97,7 +97,7 @@ xrender!(AddressList, <ul>
 </ul>);
 
 xrender!(Address, <span>
-   {{ self.addressee }}<br/>
+   <b>{{ self.addressee }}</b><br/>
    {{ for ch in self.children.iter() {{
       {{ if let AddressChildren::AddressLine1(l) = ch {{
         {{ l.value }}<br/>
