@@ -76,6 +76,15 @@ fn main() -> std::io::Result<()> {
              <!PhoneNumber number="987.654.3210"/>
           </Contact>
         </ContactList></p>
+        <p>Address List: <!AddressList>
+          <!Address addressee="Jane Doe">
+            <!AddressLine1 value="222 Second Street"/>
+            <!AddressLine2 value="Apartment B"/>
+            <!City name="Dover"/>
+            <!State name="Massachusetts"/>
+            <!PostalCode><!ZipCode code="02030"/></PostalCode>
+          </Address>
+        </AddressList></p>
        </?>
      </IndexTab>
      <!IndexTab name="Tab D">

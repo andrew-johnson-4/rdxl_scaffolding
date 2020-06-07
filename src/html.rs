@@ -83,6 +83,53 @@ xrender!(IndexTabs, <div style="padding-top:10px;">
   </div>
 </div>);
 
+xrender!(City, {{self.name}});
+xrender!(State, {{self.name}});
+xrender!(Country, {{self.name}});
+xrender!(ZipCode, {{self.code}});
+xrender!(PostalCode, {{ for pc in self.children.iter() {{
+   {{ let PostalCodeChildren::ZipCode(z) = pc; }}
+   {{ z }}
+}} }});
+
+xrender!(AddressList, <ul>
+  {{ for AddressListChildren::Address(a) in self.children.iter() {{ <li>{{a}}</li> }} }}
+</ul>);
+
+xrender!(Address, <span>
+   {{ self.addressee }}<br/>
+   {{ for ch in self.children.iter() {{
+      {{ if let AddressChildren::AddressLine1(l) = ch {{
+        {{ l.value }}<br/>
+      }} }}
+   }} }}
+   {{ for ch in self.children.iter() {{
+      {{ if let AddressChildren::AddressLine2(l) = ch {{
+        {{ l.value }}<br/>
+      }} }}
+   }} }}
+   {{ for ch in self.children.iter() {{
+      {{ if let AddressChildren::City(c) = ch {{
+        {{ c }},
+      }} }}
+   }} }}
+   {{ for ch in self.children.iter() {{
+      {{ if let AddressChildren::State(s) = ch {{
+        {{ s }},
+      }} }}
+   }} }}
+   {{ for ch in self.children.iter() {{
+      {{ if let AddressChildren::Country(c) = ch {{
+        {{ c }}
+      }} }}
+   }} }}
+   {{ for ch in self.children.iter() {{
+      {{ if let AddressChildren::PostalCode(p) = ch {{
+        {{ p }}
+      }} }}
+   }} }}
+</span>);
+
 xrender!(ContactList, <ul>
   {{ for ContactListChildren::Contact(c) in self.children.iter() {{ <li>{{c}}</li> }} }}
 </ul>);

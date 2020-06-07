@@ -68,6 +68,22 @@ xtype!(<!Contact person:Person>
 </Contact>);
 xtype!(<!ContactList><?Contact/></ContactList>);
 
+xtype!(<!City name:String/>);
+xtype!(<!State name:String/>);
+xtype!(<!Country name:String/>);
+xtype!(<!ZipCode code:String/>);
+xtype!(<!PostalCode><?ZipCode/></PostalCode>);
+
+xtype!(<!Address addressee:String>
+   <!AddressLine1 value:String/>
+   <!AddressLine2 value:String/>
+   <?City/>
+   <?State/>
+   <?PostalCode/>
+   <?Country/>
+</Address>);
+xtype!(<!AddressList><?Address/></AddressList>);
+
 xtype!(<!Date year:u64 month:u64 day:u64/>);
 xtype!(<!Time hour:u64 minute:u64 second:u64/>);
 xtype!(<!DateTime date:Date time:Time/>);
