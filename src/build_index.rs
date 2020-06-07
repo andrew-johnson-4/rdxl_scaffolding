@@ -16,8 +16,11 @@ fn main() -> std::io::Result<()> {
          <h3>Input Elements</h3>
          <!InputButton name="Button"/>
          <!InputCheckbox name="Checkbox"/>
+         <!InputButtonGroup>
+           <!InputButton name="GroupButton1"/>
+           <!InputButton name="GroupButton2"/>
+         </InputButtonGroup>
 /*
-xtype!(<!InputButtonGroup><?InputButton/></InputButtonGroup>);
 xtype!(<!InputColor name:String/>);
 xtype!(<!InputDate name:String/>);
 xtype!(<!InputDatetime name:String/>);
