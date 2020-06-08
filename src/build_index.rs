@@ -85,6 +85,12 @@ fn main() -> std::io::Result<()> {
             <!State name="Massachusetts"/>
             <!PostalCode><!ZipCode code="02030"/></PostalCode>
           </Address>
+          <!Address addressee="John Dover">
+            <!AddressLine1 value="12 Third Avenue"/>
+            <!City name="Providence"/>
+            <!State name="Rhode Island"/>
+            <!PostalCode><!ZipCode code="02902"/></PostalCode>
+          </Address>
         </AddressList></p>
        </?>
      </IndexTab>
