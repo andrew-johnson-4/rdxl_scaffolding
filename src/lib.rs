@@ -18,9 +18,9 @@ xtype!(<!List><!ListItem><?/></ListItem></List>);
 xtype!(<!Card><?Image/><?/></Card>);
 xtype!(<!Carousel><!CarouselSlide><?Image/><?/></CarouselSlide></Carousel>);
 
-xtype!(<!BarGraph xunit:String yunit:String><!BarGraphItem x:String y:f64/></BarGraph>);
-xtype!(<!Histogram xunit:String yunit:String><!HistogramItem xmin:f64 xmax:f64 y:f64/></Histogram>);
-xtype!(<!PieChart><!PieChartItem xtag:String y:f64/></PieChart>);
+xtype!(<!BarGraph xunit:String yunit:String><!BarGraphItem x:String y:u64/></BarGraph>);
+xtype!(<!Histogram xunit:String yunit:String><!HistogramItem xmin:u64 xmax:u64 y:u64/></Histogram>);
+xtype!(<!PieChart><!PieChartItem xtag:String y:u64/></PieChart>);
 xtype!(<!LineGraph xunit:String yunit:String><!LineGraphLine f:String/></LineGraph>);
 
 xtype!(<!Alert message:String><?/></Alert>);

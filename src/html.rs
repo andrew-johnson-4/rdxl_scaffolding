@@ -157,3 +157,6 @@ xrender!(Contact, <span>
       }} }}
    }} }}
 </span>);
+
+xrender!(BarGraph, <div>
+</div>);

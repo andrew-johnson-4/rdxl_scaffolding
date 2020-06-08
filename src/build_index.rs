@@ -94,6 +94,18 @@ fn main() -> std::io::Result<()> {
         </AddressList></p>
        </?>
      </IndexTab>
+     <!IndexTab name="Graph Elements">
+       <?>
+         <h3>Graph Elements</h3>
+         <!BarGraph xunit="name" yunit="pairs of shoes">
+           <!BarGraphItem x="Joeline" y=7/>
+           <!BarGraphItem x="John" y=5/>
+           <!BarGraphItem x="Jane" y=9/>
+           <!BarGraphItem x="Jennifer" y=3/>
+           <!BarGraphItem x="James" y=4/>
+         </BarGraph>
+       </?>
+     </IndexTab>
    </IndexTabs> ).as_bytes())?;
 
    f.write_all(b"</div>")?;
