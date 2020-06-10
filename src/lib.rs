@@ -32,10 +32,22 @@ xtype!(
   <!Carousel><!CarouselSlide><?Image/><?Card/></CarouselSlide></Carousel>
 );
 
-xtype!(<!BarGraph xunit:String yunit:String><!BarGraphItem x:String y:u64/></BarGraph>);
-xtype!(<!Histogram xunit:String yunit:String><!HistogramItem xmin:u64 xmax:u64 y:u64/></Histogram>);
-xtype!(<!PieChart><!PieChartItem xtag:String y:u64/></PieChart>);
-xtype!(<!LineGraph xunit:String yunit:String><!LineGraphLine f:String/></LineGraph>);
+xtype!(
+  /** BarGraph renders enclosed data as a bar graph */
+  <!BarGraph xunit:String yunit:String><!BarGraphItem x:String y:u64/></BarGraph>
+);
+xtype!(
+  /** Histogram renders enclosed data as a histogram */
+  <!Histogram xunit:String yunit:String><!HistogramItem xmin:u64 xmax:u64 y:u64/></Histogram>
+);
+xtype!(
+  /** PieChart renders enclosed data as a pie chart */
+  <!PieChart><!PieChartItem xtag:String y:u64/></PieChart>
+);
+xtype!(
+  /** LineGraph renders enclosed data as a line graph */
+  <!LineGraph xunit:String yunit:String><!LineGraphLine f:String/></LineGraph>
+);
 
 xtype!(<!Alert message:String><?/></Alert>);
 xtype!(<!Tooltip message:String><?/></Tooltip>);
