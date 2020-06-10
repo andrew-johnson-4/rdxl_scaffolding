@@ -1,16 +1,11 @@
-//! # Progress Bar component
-//!
-//! ```
-//! # use rdxl_scaffolding::*;
-//! # fn main() {
-//! ProgressBar { numerator:33, denominator:50, unit:"MB".to_string(), children:vec![] }
-//! # ;}
-//! ```
-
 use rdxl::xtype;
 pub mod html;
 
-xtype!(<!IndexTabs><!IndexTab name:String><?/></IndexTab></IndexTabs>);
+xtype!(
+  /** IndexTabs encapsulates multiple panels of content with tabs to select
+      an active panel */
+  <!IndexTabs><!IndexTab name:String><?/></IndexTab></IndexTabs>
+);
 xtype!(<!Collapse><!CollapseHead name:String><?/></CollapseHead><!CollapseBody name:String><?/></CollapseBody></Collapse>);
 xtype!(<!DropDown><!DropDownHead name:String><?/></DropDownHead><!DropDownBody name:String><?/></DropDownBody></DropDown>);
 xtype!(<!Table><!TableRow><!TableCell><?/></TableCell></TableRow></Table>);
