@@ -6,12 +6,31 @@ xtype!(
       an active panel */
   <!IndexTabs><!IndexTab name:String><?/></IndexTab></IndexTabs>
 );
-xtype!(<!Collapse><!CollapseHead name:String><?/></CollapseHead><!CollapseBody name:String><?/></CollapseBody></Collapse>);
-xtype!(<!DropDown><!DropDownHead name:String><?/></DropDownHead><!DropDownBody name:String><?/></DropDownBody></DropDown>);
-xtype!(<!Table><!TableRow><!TableCell><?/></TableCell></TableRow></Table>);
-xtype!(<!List><!ListItem><?/></ListItem></List>);
-xtype!(<!Card><?Image/><?/></Card>);
-xtype!(<!Carousel><!CarouselSlide><?Image/><?/></CarouselSlide></Carousel>);
+xtype!(
+  /** Collapse encapsulates a single panel of content that slides up or down 
+      as inline content */
+  <!Collapse><!CollapseHead name:String><?/></CollapseHead><!CollapseBody name:String><?/></CollapseBody></Collapse>
+);
+xtype!(
+  /** Dropdown implements a dropdown menu */
+  <!DropDown><!DropDownHead name:String><?/></DropDownHead><!DropDownBody name:String><?/></DropDownBody></DropDown>
+);
+xtype!(
+  /** Table encapsulates tabular data and elements */
+  <!Table><!TableRow><!TableCell><?/></TableCell></TableRow></Table>
+);
+xtype!(
+  /** List encapsulates list data and elements */
+  <!List><!ListItem><?/></ListItem></List>
+);
+xtype!(
+  /** Card renders an image with associated with elements */
+  <!Card><?Image/><?/></Card>
+);
+xtype!(
+  /** Carousel renders a revolving carousel of images or cards */
+  <!Carousel><!CarouselSlide><?Image/><?Card/></CarouselSlide></Carousel>
+);
 
 xtype!(<!BarGraph xunit:String yunit:String><!BarGraphItem x:String y:u64/></BarGraph>);
 xtype!(<!Histogram xunit:String yunit:String><!HistogramItem xmin:u64 xmax:u64 y:u64/></Histogram>);
