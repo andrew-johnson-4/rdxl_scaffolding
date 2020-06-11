@@ -202,22 +202,52 @@ xtype!(
   <!ContactList><?Contact/></ContactList>
 );
 
-xtype!(<!City name:String/>);
-xtype!(<!State name:String/>);
-xtype!(<!Country name:String/>);
-xtype!(<!ZipCode code:String/>);
-xtype!(<!PostalCode><?ZipCode/></PostalCode>);
+xtype!(
+  /** City encapsulates the concept of a city */
+  <!City name:String/>
+);
+xtype!(
+  /** State encapsulates the concept of a state */
+  <!State name:String/>
+);
+xtype!(
+  /** Country encapsulates the concept of a country */
+  <!Country name:String/>
+);
+xtype!(
+  /** ZipCode encapsulates the concept of a zip code */
+  <!ZipCode code:String/>
+);
+xtype!(
+  /** PostalCode encapsulates the concept of a postal code */
+  <!PostalCode><?ZipCode/></PostalCode>
+);
 
-xtype!(<!Address addressee:String>
-   <!AddressLine1 value:String/>
-   <!AddressLine2 value:String/>
-   <?City/>
-   <?State/>
-   <?PostalCode/>
-   <?Country/>
-</Address>);
-xtype!(<!AddressList><?Address/></AddressList>);
+xtype!(
+  /** Address encapsulates the concept of an address */
+  <!Address addressee:String>
+    <!AddressLine1 value:String/>
+    <!AddressLine2 value:String/>
+    <?City/>
+    <?State/>
+    <?PostalCode/>
+    <?Country/>
+ </Address>
+);
+xtype!(
+  /** AddressList encapsulates a list of addresses */
+  <!AddressList><?Address/></AddressList>
+);
 
-xtype!(<!Date year:u64 month:u64 day:u64/>);
-xtype!(<!Time hour:u64 minute:u64 second:u64/>);
-xtype!(<!DateTime date:Date time:Time/>);
+xtype!(
+  /** Date encapsulates the concept of a dated day */
+  <!Date year:u64 month:u64 day:u64/>
+);
+xtype!(
+  /** Time encapsulates the concept of a time of day */
+  <!Time hour:u64 minute:u64 second:u64/>
+);
+xtype!(
+  /** DateTime encapsulates the concept of a dated day and a time of day */
+  <!DateTime date:Date time:Time/>
+);
