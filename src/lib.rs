@@ -49,31 +49,103 @@ xtype!(
   <!LineGraph xunit:String yunit:String><!LineGraphLine f:String/></LineGraph>
 );
 
-xtype!(<!Alert message:String><?/></Alert>);
-xtype!(<!Tooltip message:String><?/></Tooltip>);
-xtype!(<!BreadCrumb active:String><!BreadCrumbItem name:String><?/></BreadCrumbItem></BreadCrumb>);
+xtype!(
+  /** Alert renders an alert message or element at the top of the page */
+  <!Alert message:String><?/></Alert>
+);
+xtype!(
+  /** Tooltip renders a tip message or element at the cursor */
+  <!Tooltip message:String><?/></Tooltip>
+);
+xtype!(
+  /** BreadCrumb renders a series of crumbs leading to the current location path */
+  <!BreadCrumb active:String><!BreadCrumbItem name:String><?/></BreadCrumbItem></BreadCrumb>
+);
 
-xtype!(<!InputButton name:String/>);
-xtype!(<!InputButtonGroup><?InputButton/></InputButtonGroup>);
-xtype!(<!InputCheckbox name:String/>);
-xtype!(<!InputColor name:String/>);
-xtype!(<!InputDate name:String/>);
-xtype!(<!InputDatetime name:String/>);
-xtype!(<!InputEmail name:String/>);
-xtype!(<!InputFile name:String/>);
-xtype!(<!InputImage name:String/>);
-xtype!(<!InputMonth name:String/>);
-xtype!(<!InputNumber name:String/>);
-xtype!(<!InputPassword name:String/>);
-xtype!(<!InputRadio name:String><!InputRadioOption value:String/></InputRadio>);
-xtype!(<!InputRange name:String min:u64 max:u64/>);
-xtype!(<!InputSearch name:String/>);
-xtype!(<!InputSubmit/>);
-xtype!(<!InputTelephoneNumber name:String/>);
-xtype!(<!InputText name:String/>);
-xtype!(<!InputTime name:String/>);
-xtype!(<!InputUrl name:String/>);
-xtype!(<!InputWeek name:String/>);
+xtype!(
+  /** InputButton renders a button element */
+  <!InputButton name:String/>
+);
+xtype!(
+  /** InputButtonGroup renders a group of button elements */
+  <!InputButtonGroup><?InputButton/></InputButtonGroup>
+);
+xtype!(
+  /** InputCheckbox renders a checkbox element */
+  <!InputCheckbox name:String/>
+);
+xtype!(
+  /** InputColor renders a color picker element */
+  <!InputColor name:String/>
+);
+xtype!(
+  /** InputDate renders a date input element */
+  <!InputDate name:String/>
+);
+xtype!(
+  /** InputDatetime renders a datetime input element */
+  <!InputDatetime name:String/>
+);
+xtype!(
+  /** InputEmail renders an email input element */
+  <!InputEmail name:String/>
+);
+xtype!(
+  /** InputFile renders a file input element */
+  <!InputFile name:String/>
+);
+xtype!(
+  /** InputImage renders an image input element */
+  <!InputImage name:String/>
+);
+xtype!(
+  /** InputMonth renders a month input element */
+  <!InputMonth name:String/>
+);
+xtype!(
+  /** InputNumber renders a number input element */
+  <!InputNumber name:String/>
+);
+xtype!(
+  /** InputPassword renders a password input element */
+  <!InputPassword name:String/>
+);
+xtype!(
+  /** InputRadio renders a group of radio input elements */
+  <!InputRadio name:String><!InputRadioOption value:String/></InputRadio>
+);
+xtype!(
+  /** InputRange renders a range slider element */
+  <!InputRange name:String min:u64 max:u64/>
+);
+xtype!(
+  /** InputSearch renders a search input element */
+  <!InputSearch name:String/>
+);
+xtype!(
+  /** InputSubmit renders a form submit element */
+  <!InputSubmit/>
+);
+xtype!(
+  /** InputTelephoneNumber renders a telephone input element */
+  <!InputTelephoneNumber name:String/>
+);
+xtype!(
+  /** InputText renders a text input element */
+  <!InputText name:String/>
+);
+xtype!(
+  /** InputTime renders a time input element */
+  <!InputTime name:String/>
+);
+xtype!(
+  /** InputUrl renders a url input element */
+  <!InputUrl name:String/>
+);
+xtype!(
+  /** InputWeek renders a week input element */
+  <!InputWeek name:String/>
+);
 
 xtype!(<!ProgressBar numerator:u64 denominator:u64 unit:String/>);
 xtype!(<!Image name:String/>);
