@@ -147,24 +147,60 @@ xtype!(
   <!InputWeek name:String/>
 );
 
-xtype!(<!ProgressBar numerator:u64 denominator:u64 unit:String/>);
-xtype!(<!Image name:String/>);
-xtype!(<!Icon name:String/>);
-xtype!(<!Badge name:String/>);
+xtype!(
+  /** ProgressBar renders a progress bar */
+  <!ProgressBar numerator:u64 denominator:u64 unit:String/>
+);
+xtype!(
+  /** Image renders an inline image */
+  <!Image name:String/>
+);
+xtype!(
+  /** Icon renders an inline icon */
+  <!Icon name:String/>
+);
+xtype!(
+  /** Badge renders an inline badge */
+  <!Badge name:String/>
+);
 
-xtype!(<!Person name:Name/>);
-xtype!(<!Name name:String/>);
-xtype!(<!Title title:String/>);
-xtype!(<!Email email:String/>);
-xtype!(<!PhoneNumber number:String/>);
-xtype!(<!Website url:String/>);
-xtype!(<!Contact person:Person>
-   <?Title/>
-   <?Email/>
-   <?PhoneNumber/>
-   <?Website/>
-</Contact>);
-xtype!(<!ContactList><?Contact/></ContactList>);
+xtype!(
+  /** Person encapsulates the concept of personhood */
+  <!Person name:Name/>
+);
+xtype!(
+  /** Name encapsulates the concept of the name of something */
+  <!Name name:String/>
+);
+xtype!(
+  /** Title encapsulates the concept of the title of something */
+  <!Title title:String/>
+);
+xtype!(
+  /** Email associates an email address with something */
+  <!Email email:String/>
+);
+xtype!(
+  /** PhoneNumber associates a phone number with something */
+  <!PhoneNumber number:String/>
+);
+xtype!(
+  /** Website associates a website with something */
+  <!Website url:String/>
+);
+xtype!(
+  /** Contact aggregates the contact information of a person */
+  <!Contact person:Person>
+    <?Title/>
+    <?Email/>
+    <?PhoneNumber/>
+    <?Website/>
+ </Contact>
+);
+xtype!(
+  /** ContactList aggregates contact information of people */
+  <!ContactList><?Contact/></ContactList>
+);
 
 xtype!(<!City name:String/>);
 xtype!(<!State name:String/>);
