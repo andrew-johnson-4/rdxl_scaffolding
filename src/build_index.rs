@@ -104,6 +104,15 @@ fn main() -> std::io::Result<()> {
            <!BarGraphItem x="Jennifer" y=3/>
            <!BarGraphItem x="James" y=4/>
          </BarGraph></p>
+         <p>Histogram: <!Histogram xunit="seconds" yunit="# of finishers">
+           <!HistogramItem xmin=45 xmax=49 y=1/>
+           <!HistogramItem xmin=50 xmax=54 y=3/>
+           <!HistogramItem xmin=55 xmax=59 y=5/>
+           <!HistogramItem xmin=60 xmax=64 y=7/>
+           <!HistogramItem xmin=65 xmax=69 y=2/>
+           <!HistogramItem xmin=70 xmax=74 y=6/>
+           <!HistogramItem xmin=75 xmax=79 y=2/>
+         </Histogram></p>
        </?>
      </IndexTab>
    </IndexTabs> ).as_bytes())?;
