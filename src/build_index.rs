@@ -5,7 +5,7 @@ use rdxl::xhtml;
 use rdxl_scaffolding::*;
 
 fn main() -> std::io::Result<()> {
-   let mut f = File::create("examples/index.html")?;
+   let mut f = File::create("docs/index.html")?;
 
    f.write_all(b"<!doctype html>")?;
    f.write_all(br#"<html lang="en">"#)?;
