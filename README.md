@@ -6,7 +6,7 @@ Rdxl Scaffolding
 [![Build Nightly](https://github.com/andrew-johnson-4/rdxl_scaffolding/workflows/BuildNightly/badge.svg)](https://github.com/andrew-johnson-4/rdxl_scaffolding)
 [![Build](https://github.com/andrew-johnson-4/rdxl_scaffolding/workflows/Build/badge.svg)](https://github.com/andrew-johnson-4/rdxl_scaffolding)
 
-Prefabricated HTML components
+[Prefabricated HTML components](https://andrew-johnson-4.github.io/rdxl_scaffolding/)
 
 ```rust
 xhtml!(<!ProgressBar numerator=12 denominator=32 unit="MB"/>)
