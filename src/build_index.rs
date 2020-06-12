@@ -97,13 +97,13 @@ fn main() -> std::io::Result<()> {
      <!IndexTab name="Graph Elements">
        <?>
          <h3>Graph Elements</h3>
-         <!BarGraph xunit="name" yunit="pairs of shoes">
+         <p>Bar Graph: <!BarGraph xunit="name" yunit="pairs of shoes">
            <!BarGraphItem x="Joeline" y=7/>
            <!BarGraphItem x="John" y=5/>
            <!BarGraphItem x="Jane" y=9/>
            <!BarGraphItem x="Jennifer" y=3/>
            <!BarGraphItem x="James" y=4/>
-         </BarGraph>
+         </BarGraph></p>
        </?>
      </IndexTab>
    </IndexTabs> ).as_bytes())?;
