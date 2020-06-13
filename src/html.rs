@@ -58,6 +58,40 @@ xrender!(ProgressBar, <div style="position:relative; height:30px; width:300px; b
   <div style="line-height:30px; width:300px; text-align:center; font-family:sans;">{{ self.numerator }} / {{ self.denominator }} {{ self.unit }}</div>
 </div>);
 
+xrender!(Table, <table class="table">
+  <tbody>
+    {{ for tr in self.children.iter() {{
+      {{ let TableChildren::TableRow(tr) = tr; }}
+      {{ tr }}
+    }} }}
+  </tbody>
+</table>);
+xrender!(TableRow, <tr>
+  {{ for tc in self.children.iter() {{
+    {{ let TableRowChildren::TableCell(tc) = tc; }}
+    {{ tc }}
+  }} }}
+</tr>);
+xrender!(TableCell, <td>
+  {{ for d in self.children.iter() {{
+    {{ let TableCellChildren::Display(d) = d; }}
+    {{ d }}
+  }} }}
+</td>);
+
+xrender!(List, <ul class="list-group">
+  {{ for li in self.children.iter() {{
+    {{ let ListChildren::ListItem(li) = li; }}
+    {{ li }}
+  }} }}
+</ul>);
+xrender!(ListItem, <li class="list-group-item">
+  {{ for d in self.children.iter() {{
+    {{ let ListItemChildren::Display(d) = d; }}
+    {{ d }}
+  }} }}
+</li>);
+
 xrender!(IndexTabs, <div style="padding-top:10px;">
   {{ let tabs_classname = unique_identifier("index_tabs"); }}
   {{ for (tabi,tab) in self.children.iter().enumerate() {{
