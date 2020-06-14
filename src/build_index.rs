@@ -20,6 +20,29 @@ fn main() -> std::io::Result<()> {
    f.write_all(br#"<h2><a href="https://crates.io/crates/rdxl">Rdxl Templating Examples</a></h2>"#)?;
 
    f.write_all(xhtml!( <!IndexTabs>
+     <!IndexTab name="Flexible Container Elements">
+       <?>
+         <h3>Flexible Container Elements</h3>
+         <p><b>Card:</b></p>
+         <div class="row">
+           <div class="col-sm-3">
+             <!Card>
+               <!Image name="stanford_bunny.png"/>
+               <?><p>The Stanford Bunny is cute!</p></?>
+             </Card>
+           </div>
+           <div class="col-sm-3">
+             <!Card>
+               <!Image name="icann.png"/>
+               <?>
+                 <h4>ICANN Headquarters</h4>
+                 <p>ICANN is a large organization</p>
+               </?>
+             </Card>
+           </div>
+         </div>
+       </?>
+     </IndexTab>
      <!IndexTab name="Inline Container Elements">
        <?>
          <h3>Inline Container Elements</h3>
@@ -46,29 +69,6 @@ fn main() -> std::io::Result<()> {
            <!ListItem><?>EF</?></ListItem>
            <!ListItem><?>GH</?></ListItem>
          </List></p>
-       </?>
-     </IndexTab>
-     <!IndexTab name="Flexible Container Elements">
-       <?>
-         <h3>Flexible Container Elements</h3>
-         <p><b>Card:</b></p>
-         <div class="row">
-           <div class="col-sm-3">
-             <!Card>
-               <!Image name="stanford_bunny.png"/>
-               <?><p>The Stanford Bunny is cute!</p></?>
-             </Card>
-           </div>
-           <div class="col-sm-3">
-             <!Card>
-               <!Image name="icann.png"/>
-               <?>
-                 <h4>ICANN Headquarters</h4>
-                 <p>ICANN is a large organization</p>
-               </?>
-             </Card>
-           </div>
-         </div>
        </?>
      </IndexTab>
      <!IndexTab name="Input Elements">
