@@ -58,6 +58,22 @@ xrender!(ProgressBar, <div style="position:relative; height:30px; width:300px; b
   <div style="line-height:30px; width:300px; text-align:center; font-family:sans;">{{ self.numerator }} / {{ self.denominator }} {{ self.unit }}</div>
 </div>);
 
+xrender!(Image, <img src={{ format!("'{}'", self.name) }} style="width:100%"/>);
+xrender!(Card, <div class="card">
+  {{ for im in self.children.iter() {{
+    {{ if let CardChildren::Image(im) = im {{
+      <img src={{ format!("'{}'", im.name) }} class="card-img-top"/>
+    }} }}
+  }} }}
+  <div class="card-body">
+    {{ for d in self.children.iter() {{
+      {{ if let CardChildren::Display(d) = d {{
+        {{ d }}
+      }} }}
+    }} }}
+  </div>
+</div>);
+
 xrender!(Table, <table class="table">
   <tbody>
     {{ for tr in self.children.iter() {{
