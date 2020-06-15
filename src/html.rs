@@ -74,7 +74,10 @@ xrender!(Card, <div class="card">
   </div>
 </div>);
 
-xrender!(Carousel, <div id="carouselControls" class="carousel slide" "data-ride"="carousel">
+xrender!(Carousel, 
+{{ let carousel_id = unique_identifier("carousel"); }}
+{{ let carousel_idh = format!("'#{}'", carousel_id); }}
+<div id={{ carousel_id }} class="carousel slide" "data-ride"="carousel">
   <div class="carousel-inner">
     {{ for (i,cs) in self.children.iter().enumerate() {{
       {{ let CarouselChildren::CarouselSlide(cs) = cs; }}
@@ -89,11 +92,11 @@ xrender!(Carousel, <div id="carouselControls" class="carousel slide" "data-ride"
       </div>
     }} }}
   </div>
-  <a class="carousel-control-prev" href="#carouselControls" role="button" "data-slide"="prev">
+  <a class="carousel-control-prev" href={{ carousel_idh }} role="button" "data-slide"="prev">
     <span class="carousel-control-prev-icon" "aria-hidden"="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next" href="#carouselControls" role="button" "data-slide"="next">
+  <a class="carousel-control-next" href={{ carousel_idh }} role="button" "data-slide"="next">
     <span class="carousel-control-next-icon" "aria-hidden"="true"></span>
     <span class="sr-only">Next</span>
   </a>
