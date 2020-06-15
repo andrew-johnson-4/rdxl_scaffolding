@@ -26,7 +26,14 @@ fn main() -> std::io::Result<()> {
      <!IndexTab name="Flexible Container Elements">
        <?>
          <h3>Flexible Container Elements</h3>
-         <p><b>Card:</b></p>
+         <div class="row">
+           <div class="col-sm-6">
+             <b>Card:</b>
+           </div>
+           <div class="col-sm-6">
+             <b>Carousel:</b>
+           </div>
+         </div>
          <div class="row">
            <div class="col-sm-3">
              <!Card>
@@ -43,9 +50,6 @@ fn main() -> std::io::Result<()> {
                </?>
              </Card>
            </div>
-         </div>
-         <p><b>Carousel:</b></p>
-         <div class="row">
            <div class="col-sm-6">
              <!Carousel>
                <!CarouselSlide><!Image name="stanford_bunny.png"/></CarouselSlide>
