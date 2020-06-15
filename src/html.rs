@@ -74,6 +74,31 @@ xrender!(Card, <div class="card">
   </div>
 </div>);
 
+xrender!(Carousel, <div id="carouselControls" class="carousel slide" "data-ride"="carousel">
+  <div class="carousel-inner">
+    {{ for (i,cs) in self.children.iter().enumerate() {{
+      {{ let CarouselChildren::CarouselSlide(cs) = cs; }}
+      <div class={{ format!("'carousel-item{}'", if i==0 {" active"} else {""}) }}>
+        {{ for cc in cs.children.iter() {{
+          {{ if let CarouselSlideChildren::Image(ci) = cc {{
+            <img src={{ format!("'{}'", ci.name) }} class="d-block w-100"/>
+          }} else if let CarouselSlideChildren::Card(cc) = cc {{
+            {{ cc }}
+          }} }}
+        }} }}
+      </div>
+    }} }}
+  </div>
+  <a class="carousel-control-prev" href="#carouselControls" role="button" "data-slide"="prev">
+    <span class="carousel-control-prev-icon" "aria-hidden"="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselControls" role="button" "data-slide"="next">
+    <span class="carousel-control-next-icon" "aria-hidden"="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>);
+
 xrender!(Table, <table class="table">
   <tbody>
     {{ for tr in self.children.iter() {{

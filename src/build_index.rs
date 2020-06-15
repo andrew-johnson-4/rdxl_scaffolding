@@ -13,6 +13,9 @@ fn main() -> std::io::Result<()> {
    f.write_all(br#"<meta charset="utf-8">"#)?;
    f.write_all(br#"<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">"#)?;
    f.write_all(br#"<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">"#)?;
+   f.write_all(br#"<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>"#)?;
+   f.write_all(br#"<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>"#)?;
+   f.write_all(br#"<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>"#)?;
    f.write_all(b"<title>Example HTML</title>")?;
    f.write_all(b"</head>")?;
    f.write_all(b"<body>")?;
@@ -39,6 +42,17 @@ fn main() -> std::io::Result<()> {
                  <p>ICANN is a large organization</p>
                </?>
              </Card>
+           </div>
+         </div>
+         <p><b>Carousel:</b></p>
+         <div class="row">
+           <div class="col-sm-6">
+             <!Carousel>
+               <!CarouselSlide><!Image name="stanford_bunny.png"/></CarouselSlide>
+               <!CarouselSlide><!Image name="icann.png"/></CarouselSlide>
+               <!CarouselSlide><!Image name="stanford_bunny.png"/></CarouselSlide>
+               <!CarouselSlide><!Image name="stanford_bunny.png"/></CarouselSlide>
+             </Carousel>
            </div>
          </div>
        </?>
