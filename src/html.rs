@@ -58,6 +58,55 @@ xrender!(ProgressBar, <div style="position:relative; height:30px; width:300px; b
   <div style="line-height:30px; width:300px; text-align:center; font-family:sans;">{{ self.numerator }} / {{ self.denominator }} {{ self.unit }}</div>
 </div>);
 
+xrender!(AlertPrimary, <div class="alert alert-primary alert-dismissible fade show" role="alert">
+  {{ self.message }}
+  <button type="button" class="close" "data-dismiss"="alert" "aria-label"="Close">
+    <span "aria-hidden"="true">&times;</span>
+  </button>
+</div>);
+xrender!(AlertSecondary, <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+  {{ self.message }}
+  <button type="button" class="close" "data-dismiss"="alert" "aria-label"="Close">
+    <span "aria-hidden"="true">&times;</span>
+  </button>
+</div>);
+xrender!(AlertSuccess, <div class="alert alert-success alert-dismissible fade show" role="alert">
+  {{ self.message }}
+  <button type="button" class="close" "data-dismiss"="alert" "aria-label"="Close">
+    <span "aria-hidden"="true">&times;</span>
+  </button>
+</div>);
+xrender!(AlertDanger, <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  {{ self.message }}
+  <button type="button" class="close" "data-dismiss"="alert" "aria-label"="Close">
+    <span "aria-hidden"="true">&times;</span>
+  </button>
+</div>);
+xrender!(AlertWarning, <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  {{ self.message }}
+  <button type="button" class="close" "data-dismiss"="alert" "aria-label"="Close">
+    <span "aria-hidden"="true">&times;</span>
+  </button>
+</div>);
+xrender!(AlertInfo, <div class="alert alert-info alert-dismissible fade show" role="alert">
+  {{ self.message }}
+  <button type="button" class="close" "data-dismiss"="alert" "aria-label"="Close">
+    <span "aria-hidden"="true">&times;</span>
+  </button>
+</div>);
+xrender!(AlertLight, <div class="alert alert-light alert-dismissible fade show" role="alert">
+  {{ self.message }}
+  <button type="button" class="close" "data-dismiss"="alert" "aria-label"="Close">
+    <span "aria-hidden"="true">&times;</span>
+  </button>
+</div>);
+xrender!(AlertDark, <div class="alert alert-dark alert-dismissible fade show" role="alert">
+  {{ self.message }}
+  <button type="button" class="close" "data-dismiss"="alert" "aria-label"="Close">
+    <span "aria-hidden"="true">&times;</span>
+  </button>
+</div>);
+
 xrender!(Image, <img src={{ format!("'{}'", self.name) }} style="width:100%"/>);
 xrender!(Card, <div class="card">
   {{ for im in self.children.iter() {{

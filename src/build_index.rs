@@ -130,6 +130,15 @@ fn main() -> std::io::Result<()> {
        <?>
          <h3>Miscellaneous Elements</h3>
          <p>Progress Bar: <!ProgressBar numerator=312 denominator=1532 unit="MB"/></p>
+         <p>Alerts:</p>
+         <p><!AlertPrimary message="Primary Alert"/></p>
+         <p><!AlertSecondary message="Secondary Alert"/></p>
+         <p><!AlertSuccess message="Success Alert"/></p>
+         <p><!AlertDanger message="Danger Alert"/></p>
+         <p><!AlertWarning message="Warning Alert"/></p>
+         <p><!AlertInfo message="Info Alert"/></p>
+         <p><!AlertLight message="Light Alert"/></p>
+         <p><!AlertDark message="Dark Alert"/></p>
        </?>
      </IndexTab>
      <!IndexTab name="Dataset Elements">

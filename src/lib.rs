@@ -50,9 +50,38 @@ xtype!(
 );
 
 xtype!(
-  /** Alert renders an alert message or element at the top of the page */
-  <!Alert message:String><?/></Alert>
+  /** AlertPrimary renders an alert message or element at the top of the page */
+  <!AlertPrimary message:String><?/></AlertPrimary>
 );
+xtype!(
+  /** AlertSecondary renders an alert message or element at the top of the page */
+  <!AlertSecondary message:String><?/></AlertSecondary>
+);
+xtype!(
+  /** AlertSuccess renders an alert message or element at the top of the page */
+  <!AlertSuccess message:String><?/></AlertSuccess>
+);
+xtype!(
+  /** AlertDanger renders an alert message or element at the top of the page */
+  <!AlertDanger message:String><?/></AlertDanger>
+);
+xtype!(
+  /** AlertWarning renders an alert message or element at the top of the page */
+  <!AlertWarning message:String><?/></AlertWarning>
+);
+xtype!(
+  /** AlertInfo renders an alert message or element at the top of the page */
+  <!AlertInfo message:String><?/></AlertInfo>
+);
+xtype!(
+  /** AlertLight renders an alert message or element at the top of the page */
+  <!AlertLight message:String><?/></AlertLight>
+);
+xtype!(
+  /** AlertDark renders an alert message or element at the top of the page */
+  <!AlertDark message:String><?/></AlertDark>
+);
+
 xtype!(
   /** Tooltip renders a tip message or element at the cursor */
   <!Tooltip message:String><?/></Tooltip>
