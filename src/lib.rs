@@ -83,10 +83,6 @@ xtype!(
 );
 
 xtype!(
-  /** Tooltip renders a tip message or element at the cursor */
-  <!Tooltip message:String><?/></Tooltip>
-);
-xtype!(
   /** BreadCrumb renders a series of crumbs leading to the current location path */
   <!BreadCrumb active:String><!BreadCrumbItem name:String><?/></BreadCrumbItem></BreadCrumb>
 );
