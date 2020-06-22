@@ -24,6 +24,8 @@ encourage this consolidation of models and controllers, Rdxl Scaffolding defines
 document. The user visible UI is generated from these XML common components. This is helpful whether you exchange data
 from the server as XML or JSON, as long as these objects are serializable.
 
+Dependency injection is supported through another crate called mxml.
+
 ## Contribution
 Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in rdxl_scaffolding by you,
 shall be dual licensed under the MIT and Apache 2.0 license without any additional terms or conditions.
