@@ -2,6 +2,18 @@ use rdxl::xtype;
 pub mod html;
 
 xtype!(
+   <!Script _async:bool charset:String defer:bool src:String _type:String>
+     <?/>
+   </Script>
+);
+
+xtype!(
+  <!Html lang:String doctype:String xmlns:String>
+    <?Script/>
+  </Html>
+);
+
+xtype!(
   /** IndexTabs encapsulates multiple panels of content with tabs to select
       an active panel */
   <!IndexTabs><!IndexTab name:String><?/></IndexTab></IndexTabs>
