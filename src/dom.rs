@@ -6,9 +6,11 @@ xtype!(
      <?/>
    </Script>
 );
-xrender!(Script,<script {{if self.async_ {{async}}}} charset={{self.charset}}
+xrender!(Script,<script {{if self.async_ {{async}}}}
                         {{if self.defer {{defer}}}}
-                        src={{self.src}} type={{self.type_}}>
+                        {{if self.charset.len()>0 {{charset={{self.charset}}}}}}
+                        {{if self.src.len()>0 {{src={{self.src}}}}}}
+                        {{if self.type_.len()>0 {{"type"={{self.type_}}}}}}>
    {{ for cd in self.children.iter() {{
       {{ let ScriptChildren::Display(cd) = cd; }}
       {{cd}}
