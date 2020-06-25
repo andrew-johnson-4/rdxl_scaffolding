@@ -1,6 +1,6 @@
 [package]
 name = "rdxl_scaffolding"
-version = "0.0.22"
+version = "0.0.23"
 authors = ["Andrew <andrew@subarctic.org>"]
 license = "MIT OR Apache-2.0"
 description = "Rdxl Prefabricated HTML Components"
@@ -10,7 +10,7 @@ repository = "https://github.com/andrew-johnson-4/rdxl_scaffolding"
 keywords = ["html","scaffolding","templates"]
 
 [dependencies]
-rdxl = "0.5.2"
+rdxl = "0.5.3"
 mxml = "0.1.2"
 
 [[bin]]
