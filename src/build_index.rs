@@ -145,13 +145,13 @@ fn main() -> std::io::Result<()> {
        <?>
          <h3>Dataset Elements</h3>
          <p>Contact List: <!ContactList>
-           <!Contact person=<!Person name=<!Name name="John Dover"/> /> >
+           <!Contact name="John Dover">
              <!Title title="Doctor of Economics"/>
              <!Email email="john.dover@email.com"/>
              <!PhoneNumber number="1-234-567-8901"/>
              <!Website url="https://www.contact.com/johndover"/>
            </Contact>
-           <!Contact person=<!Person name=<!Name name="Jane Doe"/> /> >
+           <!Contact name="Jane Doe">
              <!PhoneNumber number="987.654.3210"/>
           </Contact>
         </ContactList></p>

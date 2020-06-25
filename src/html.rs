@@ -262,7 +262,7 @@ xrender!(ContactList, <ul>
 </ul>);
 
 xrender!(Contact, <span>
-   <b>{{ self.person.name.name }}</b>:
+   <b>{{ self.name }}</b>:
    {{ for ch in self.children.iter() {{
       {{ if let ContactChildren::Title(t) = ch {{
         {{ t.title }},

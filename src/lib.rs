@@ -2,7 +2,7 @@ use rdxl::xtype;
 pub mod html;
 
 xtype!(
-   <!Script _async:bool charset:String defer:bool src:String _type:String>
+   <!Script async_:bool charset:String defer:bool src:String type_:String>
      <?/>
    </Script>
 );
@@ -203,7 +203,7 @@ xtype!(
 
 xtype!(
   /** Person encapsulates the concept of personhood */
-  <!Person name:Name/>
+  <!Person name:String/>
 );
 xtype!(
   /** Name encapsulates the concept of the name of something */
@@ -227,7 +227,7 @@ xtype!(
 );
 xtype!(
   /** Contact aggregates the contact information of a person */
-  <!Contact person:Person>
+  <!Contact name:String>
     <?Title/>
     <?Email/>
     <?PhoneNumber/>
@@ -283,8 +283,4 @@ xtype!(
 xtype!(
   /** Time encapsulates the concept of a time of day */
   <!Time hour:u64 minute:u64 second:u64/>
-);
-xtype!(
-  /** DateTime encapsulates the concept of a dated day and a time of day */
-  <!DateTime date:Date time:Time/>
 );
