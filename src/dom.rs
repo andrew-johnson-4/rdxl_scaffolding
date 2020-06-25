@@ -18,7 +18,28 @@ xrender!(Script,<script {{if self.async_ {{async}}}}
 </script>);
 
 xtype!(
+   <!Style media:String type_:String={{"text/css".to_string()}}>
+     <?/>
+   </Style>
+);
+xrender!(Style,<style {{if self.media.len()>0 {{media={{self.media}}}}}}
+                      {{if self.type_.len()>0 {{"type"={{self.type_}}}}}}>
+   {{ for cd in self.children.iter() {{
+      {{ let StyleChildren::Display(cd) = cd; }}
+      {{cd}}
+   }} }}
+</style>);
+
+xtype!(<!Title><?/></Title>);
+xrender!(Title,{{ for c in self.children.iter() {{
+   {{ let TitleChildren::Display(cd) = c; }}
+   {{ cd }}
+}}}});
+
+xtype!(
   <!Html lang:String={{"en".to_string()}} doctype:String={{"html".to_string()}} xmlns:String={{"".to_string()}}>
+    <?Title/>
     <?Script/>
+    <?Style/>
   </Html>
 );
