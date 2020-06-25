@@ -1,17 +1,6 @@
 use rdxl::xtype;
 pub mod html;
-
-xtype!(
-   <!Script async_:bool charset:String defer:bool src:String type_:String>
-     <?/>
-   </Script>
-);
-
-xtype!(
-  <!Html lang:String doctype:String xmlns:String>
-    <?Script/>
-  </Html>
-);
+pub mod dom;
 
 xtype!(
   /** IndexTabs encapsulates multiple panels of content with tabs to select
