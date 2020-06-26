@@ -1,7 +1,8 @@
-use rdxl::xtype;
-pub mod html;
+pub mod bootstrap;
 pub mod dom;
+pub mod util;
 
+/*
 xtype!(
   /** IndexTabs encapsulates multiple panels of content with tabs to select
       an active panel */
@@ -273,3 +274,4 @@ xtype!(
   /** Time encapsulates the concept of a time of day */
   <!Time hour:u64 minute:u64 second:u64/>
 );
+*/

@@ -3,6 +3,7 @@ use std::fs::File;
 use std::io::prelude::*;
 use rdxl::xhtml;
 use rdxl_scaffolding::dom::*;
+use rdxl_scaffolding::bootstrap::*;
 
 fn main() -> std::io::Result<()> {
    let mut f = File::create("docs/index.html")?;
@@ -19,51 +20,53 @@ fn main() -> std::io::Result<()> {
         <?>
           <div class="container">
             <h2><a href="https://github.com/andrew-johnson-4/rdxl">Rdxl Templating Examples</a></h2>
+            <!IndexTabs>
+              <!IndexTab name="Flexible Container Elements">
+                <?>
+                  <h3>Flexible Container Elements</h3>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <b>Card:</b>
+                    </div>
+                    <div class="col-sm-6">
+                      <b>Carousel:</b>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <!Card>
+                        <!Image name="stanford_bunny.png"/>
+                        <?><p>The Stanford Bunny is cute!</p></?>
+                      </Card>
+                    </div>
+                    <div class="col-sm-3">
+                      <!Card>
+                        <!Image name="icann.png"/>
+                        <?>
+                          <h4>ICANN Headquarters</h4>
+                          <p>ICANN is a large organization</p>
+                        </?>
+                      </Card>
+                    </div>
+                    <div class="col-sm-6">
+                      <!Carousel>
+                        <!CarouselSlide><!Image name="stanford_bunny.png"/></CarouselSlide>
+                        <!CarouselSlide><!Image name="icann.png"/></CarouselSlide>
+                        <!CarouselSlide><!Image name="stanford_bunny.png"/></CarouselSlide>
+                        <!CarouselSlide><!Image name="stanford_bunny.png"/></CarouselSlide>
+                      </Carousel>
+                    </div>
+                  </div>
+                </?>
+              </IndexTab>
+            </IndexTabs>
           </div>
         </?>
       </Html>
    ).as_bytes())?;
 
    /*
-   f.write_all(xhtml!( <!IndexTabs>
-     <!IndexTab name="Flexible Container Elements">
-       <?>
-         <h3>Flexible Container Elements</h3>
-         <div class="row">
-           <div class="col-sm-6">
-             <b>Card:</b>
-           </div>
-           <div class="col-sm-6">
-             <b>Carousel:</b>
-           </div>
-         </div>
-         <div class="row">
-           <div class="col-sm-3">
-             <!Card>
-               <!Image name="stanford_bunny.png"/>
-               <?><p>The Stanford Bunny is cute!</p></?>
-             </Card>
-           </div>
-           <div class="col-sm-3">
-             <!Card>
-               <!Image name="icann.png"/>
-               <?>
-                 <h4>ICANN Headquarters</h4>
-                 <p>ICANN is a large organization</p>
-               </?>
-             </Card>
-           </div>
-           <div class="col-sm-6">
-             <!Carousel>
-               <!CarouselSlide><!Image name="stanford_bunny.png"/></CarouselSlide>
-               <!CarouselSlide><!Image name="icann.png"/></CarouselSlide>
-               <!CarouselSlide><!Image name="stanford_bunny.png"/></CarouselSlide>
-               <!CarouselSlide><!Image name="stanford_bunny.png"/></CarouselSlide>
-             </Carousel>
-           </div>
-         </div>
-       </?>
-     </IndexTab>
+   f.write_all(xhtml!(
      <!IndexTab name="Inline Container Elements">
        <?>
          <h3>Inline Container Elements</h3>
