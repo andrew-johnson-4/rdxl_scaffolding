@@ -4,6 +4,7 @@ use std::io::prelude::*;
 use rdxl::xhtml;
 use rdxl_scaffolding::dom::*;
 use rdxl_scaffolding::form::*;
+use rdxl_scaffolding::graph::*;
 use rdxl_scaffolding::bootstrap::*;
 
 fn main() -> std::io::Result<()> {
@@ -18,6 +19,7 @@ fn main() -> std::io::Result<()> {
         <!Script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"/>
         <!Script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"/>
         <!Script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"/>
+        <!Script src="https://d3js.org/d3.v4.min.js"/>
         <?>
           <div class="container">
             <h2><a href="https://github.com/andrew-johnson-4/rdxl">Rdxl Templating Examples</a></h2>
@@ -139,72 +141,32 @@ fn main() -> std::io::Result<()> {
                   <p><!AlertDark message="Dark Alert"/></p>
                 </?>
               </IndexTab>
+              <!IndexTab name="Graph Elements">
+                <?>
+                  <h3>Graph Elements</h3>
+                  <p>Bar Graph: <!BarGraph xunit="name" yunit="pairs of shoes">
+                    <!BarGraphItem x="Joeline" y=7/>
+                    <!BarGraphItem x="John" y=5/>
+                    <!BarGraphItem x="Jane" y=9/>
+                    <!BarGraphItem x="Jennifer" y=3/>
+                    <!BarGraphItem x="James" y=4/>
+                  </BarGraph></p>
+                  <p>Histogram: <!Histogram xunit="seconds" yunit="# of finishers">
+                    <!HistogramItem xmin=45 xmax=49 y=1/>
+                    <!HistogramItem xmin=50 xmax=54 y=3/>
+                    <!HistogramItem xmin=55 xmax=59 y=5/>
+                    <!HistogramItem xmin=60 xmax=64 y=7/>
+                    <!HistogramItem xmin=65 xmax=69 y=2/>
+                    <!HistogramItem xmin=70 xmax=74 y=6/>
+                    <!HistogramItem xmin=75 xmax=79 y=2/>
+                  </Histogram></p>
+                </?>
+              </IndexTab>
             </IndexTabs>
           </div>
         </?>
       </Html>
    ).as_bytes())?;
-
-   /*
-   f.write_all(xhtml!(
-     <!IndexTab name="Dataset Elements">
-       <?>
-         <h3>Dataset Elements</h3>
-         <p>Contact List: <!ContactList>
-           <!Contact name="John Dover">
-             <!Title title="Doctor of Economics"/>
-             <!Email email="john.dover@email.com"/>
-             <!PhoneNumber number="1-234-567-8901"/>
-             <!Website url="https://www.contact.com/johndover"/>
-           </Contact>
-           <!Contact name="Jane Doe">
-             <!PhoneNumber number="987.654.3210"/>
-          </Contact>
-        </ContactList></p>
-        <p>Address List: <!AddressList>
-          <!Address addressee="Jane Doe">
-            <!AddressLine1 value="222 Second Street"/>
-            <!AddressLine2 value="Apartment B"/>
-            <!City name="Dover"/>
-            <!State name="Massachusetts"/>
-            <!PostalCode><!ZipCode code="02030"/></PostalCode>
-          </Address>
-          <!Address addressee="John Dover">
-            <!AddressLine1 value="12 Third Avenue"/>
-            <!City name="Providence"/>
-            <!State name="Rhode Island"/>
-            <!PostalCode><!ZipCode code="02902"/></PostalCode>
-          </Address>
-        </AddressList></p>
-       </?>
-     </IndexTab>
-     <!IndexTab name="Graph Elements">
-       <?>
-         <h3>Graph Elements</h3>
-         <p>Bar Graph: <!BarGraph xunit="name" yunit="pairs of shoes">
-           <!BarGraphItem x="Joeline" y=7/>
-           <!BarGraphItem x="John" y=5/>
-           <!BarGraphItem x="Jane" y=9/>
-           <!BarGraphItem x="Jennifer" y=3/>
-           <!BarGraphItem x="James" y=4/>
-         </BarGraph></p>
-         <p>Histogram: <!Histogram xunit="seconds" yunit="# of finishers">
-           <!HistogramItem xmin=45 xmax=49 y=1/>
-           <!HistogramItem xmin=50 xmax=54 y=3/>
-           <!HistogramItem xmin=55 xmax=59 y=5/>
-           <!HistogramItem xmin=60 xmax=64 y=7/>
-           <!HistogramItem xmin=65 xmax=69 y=2/>
-           <!HistogramItem xmin=70 xmax=74 y=6/>
-           <!HistogramItem xmin=75 xmax=79 y=2/>
-         </Histogram></p>
-       </?>
-     </IndexTab>
-   </IndexTabs> ).as_bytes())?;
-
-   f.write_all(b"</div>")?;
-   f.write_all(b"</body>")?;
-   f.write_all(b"</html>")?;
-   */
 
    Ok(())
 }
