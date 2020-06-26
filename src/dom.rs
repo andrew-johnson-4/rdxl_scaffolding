@@ -36,10 +36,30 @@ xrender!(Title,{{ for c in self.children.iter() {{
    {{ cd }}
 }}}});
 
+xtype!(<!Link crossorigin:String href:String hreflang:String media:String referrerpolicy:String rel:String sizes:String title:String type_:String/>);
+xrender!(Link,<link {{if self.crossorigin.len()>0 {{crossorigin={{self.crossorigin}}}}}}
+                    {{if self.href.len()>0 {{href={{self.href}}}}}}
+                    {{if self.hreflang.len()>0 {{hreflang={{self.hreflang}}}}}}
+                    {{if self.media.len()>0 {{media={{self.media}}}}}}
+                    {{if self.referrerpolicy.len()>0 {{referrerpolicy={{self.referrerpolicy}}}}}}
+                    {{if self.rel.len()>0 {{rel={{self.rel}}}}}}
+                    {{if self.sizes.len()>0 {{sizes={{self.sizes}}}}}}
+                    {{if self.title.len()>0 {{title={{self.title}}}}}}
+                    {{if self.type_.len()>0 {{"type"={{self.type_}}}}}}/>
+);
+
+xtype!(<!Meta charset:String content:String http_equiv:String name:String/>);
+xrender!(Meta,<meta {{if self.charset.len()>0 {{charset={{self.charset}}}}}}
+                    {{if self.content.len()>0 {{content={{self.content}}}}}}
+                    {{if self.http_equiv.len()>0 {{"http-equiv"={{self.http_equiv}}}}}}
+                    {{if self.name.len()>0 {{"name"={{self.name}}}}}}/>
+);
+
 xtype!(
   <!Html lang:String={{"en".to_string()}} doctype:String={{"html".to_string()}} xmlns:String={{"".to_string()}}>
     <?Title/>
     <?Script/>
     <?Style/>
+    <?Link/>
   </Html>
 );
