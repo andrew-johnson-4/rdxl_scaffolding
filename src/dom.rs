@@ -52,7 +52,12 @@ xtype!(<!Meta charset:String content:String http_equiv:String name:String/>);
 xrender!(Meta,<meta {{if self.charset.len()>0 {{charset={{self.charset}}}}}}
                     {{if self.content.len()>0 {{content={{self.content}}}}}}
                     {{if self.http_equiv.len()>0 {{"http-equiv"={{self.http_equiv}}}}}}
-                    {{if self.name.len()>0 {{"name"={{self.name}}}}}}/>
+                    {{if self.name.len()>0 {{name={{self.name}}}}}}/>
+);
+
+xtype!(<!Base href:String target:String/>);
+xrender!(Base,<base {{if self.href.len()>0 {{href={{self.href}}}}}}
+                    {{if self.target.len()>0 {{target={{self.target}}}}}}/>
 );
 
 xtype!(
@@ -61,5 +66,7 @@ xtype!(
     <?Script/>
     <?Style/>
     <?Link/>
+    <?Base/>
+    <?/>
   </Html>
 );
