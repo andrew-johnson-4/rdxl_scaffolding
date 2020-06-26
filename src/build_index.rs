@@ -3,6 +3,7 @@ use std::fs::File;
 use std::io::prelude::*;
 use rdxl::xhtml;
 use rdxl_scaffolding::dom::*;
+use rdxl_scaffolding::form::*;
 use rdxl_scaffolding::bootstrap::*;
 
 fn main() -> std::io::Result<()> {
@@ -87,6 +88,43 @@ fn main() -> std::io::Result<()> {
                   </div>
                 </?>
               </IndexTab>
+              <!IndexTab name="Input Elements">
+                <?>
+                  <h3>Input Elements</h3>
+                  <!InputButton name="Button"/>
+                  <p>Checkbox: <!InputCheckbox name="Checkbox"/></p>
+                  <p>Button Group: <!InputButtonGroup>
+                    <!InputButton name="GroupButton1"/>
+                    <!InputButton name="GroupButton2"/>
+                  </InputButtonGroup></p>
+                  <p>Text Input: <!InputText name="Text"/></p>
+                  <p>Email Input: <!InputEmail name="Email"/></p>
+                  <p>Search Input: <!InputSearch name="Search"/></p>
+                  <p>Password Input: <!InputPassword name="Password"/></p>
+                  <p>Number Input: <!InputNumber name="Number"/></p>
+                  <p>Telephone Input: <!InputTelephoneNumber name="Telephone"/></p>
+                  <p>Url Input: <!InputUrl name="Url"/></p>
+                  <p>Range Input: <!InputRange name="Range" min=4 max=11/></p>
+
+                  <p>Color Input: <!InputColor name="Color"/></p>
+                  <p>Date Input: <!InputDate name="Date"/></p>
+                  <p>Datetime Input: <!InputDatetime name="Datetime"/></p>
+                  <p>Month Input: <!InputMonth name="Month"/></p>
+                  <p>Week Input: <!InputWeek name="Week"/></p>
+                  <p>Time Input: <!InputTime name="Time"/></p>
+
+                  <p>File Input: <!InputFile name="File"/></p>
+                  <p>Image Input: <!InputImage name="Image"/></p>
+
+                  <p>Radio Input: <!InputRadio name="Radio">
+                    <!InputRadioOption value="A"/>
+                    <!InputRadioOption value="B"/>
+                    <!InputRadioOption value="C"/>
+                  </InputRadio></p>
+
+                  <p>Submit Input: <!InputSubmit/></p>
+                </?>
+              </IndexTab>
             </IndexTabs>
           </div>
         </?>
@@ -95,43 +133,6 @@ fn main() -> std::io::Result<()> {
 
    /*
    f.write_all(xhtml!(
-     <!IndexTab name="Input Elements">
-       <?>
-         <h3>Input Elements</h3>
-         <!InputButton name="Button"/>
-         <p>Checkbox: <!InputCheckbox name="Checkbox"/></p>
-         <p>Button Group: <!InputButtonGroup>
-           <!InputButton name="GroupButton1"/>
-           <!InputButton name="GroupButton2"/>
-         </InputButtonGroup></p>
-         <p>Text Input: <!InputText name="Text"/></p>
-         <p>Email Input: <!InputEmail name="Email"/></p>
-         <p>Search Input: <!InputSearch name="Search"/></p>
-         <p>Password Input: <!InputPassword name="Password"/></p>
-         <p>Number Input: <!InputNumber name="Number"/></p>
-         <p>Telephone Input: <!InputTelephoneNumber name="Telephone"/></p>
-         <p>Url Input: <!InputUrl name="Url"/></p>
-         <p>Range Input: <!InputRange name="Range" min=4 max=11/></p>
-
-         <p>Color Input: <!InputColor name="Color"/></p>
-         <p>Date Input: <!InputDate name="Date"/></p>
-         <p>Datetime Input: <!InputDatetime name="Datetime"/></p>
-         <p>Month Input: <!InputMonth name="Month"/></p>
-         <p>Week Input: <!InputWeek name="Week"/></p>
-         <p>Time Input: <!InputTime name="Time"/></p>
-
-         <p>File Input: <!InputFile name="File"/></p>
-         <p>Image Input: <!InputImage name="Image"/></p>
-
-         <p>Radio Input: <!InputRadio name="Radio">
-           <!InputRadioOption value="A"/>
-           <!InputRadioOption value="B"/>
-           <!InputRadioOption value="C"/>
-         </InputRadio></p>
-
-         <p>Submit Input: <!InputSubmit/></p>
-       </?>
-     </IndexTab>
      <!IndexTab name="Miscellaneous Elements">
        <?>
          <h3>Miscellaneous Elements</h3>
