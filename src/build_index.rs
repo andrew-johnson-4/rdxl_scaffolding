@@ -2,26 +2,29 @@
 use std::fs::File;
 use std::io::prelude::*;
 use rdxl::xhtml;
-use rdxl_scaffolding::*;
+use rdxl_scaffolding::dom::*;
 
 fn main() -> std::io::Result<()> {
    let mut f = File::create("docs/index.html")?;
 
-   f.write_all(b"<!doctype html>")?;
-   f.write_all(br#"<html lang="en">"#)?;
-   f.write_all(b"<head>")?;
-   f.write_all(br#"<meta charset="utf-8">"#)?;
-   f.write_all(br#"<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">"#)?;
-   f.write_all(br#"<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">"#)?;
-   f.write_all(br#"<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>"#)?;
-   f.write_all(br#"<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>"#)?;
-   f.write_all(br#"<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>"#)?;
-   f.write_all(b"<title>Example HTML</title>")?;
-   f.write_all(b"</head>")?;
-   f.write_all(b"<body>")?;
-   f.write_all(br#"<div class="container">"#)?;
-   f.write_all(br#"<h2><a href="https://crates.io/crates/rdxl">Rdxl Templating Examples</a></h2>"#)?;
+   f.write_all(xhtml!(
+      <!Html>
+        <!Meta charset="utf-8"/>
+        <!Meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <!Title><?>rdxl html scaffolding</?></Title>
+        <!Link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+        <!Script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"/>
+        <!Script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"/>
+        <!Script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"/>
+        <?>
+          <div class="container">
+            <h2><a href="https://github.com/andrew-johnson-4/rdxl">Rdxl Templating Examples</a></h2>
+          </div>
+        </?>
+      </Html>
+   ).as_bytes())?;
 
+   /*
    f.write_all(xhtml!( <!IndexTabs>
      <!IndexTab name="Flexible Container Elements">
        <?>
@@ -198,6 +201,7 @@ fn main() -> std::io::Result<()> {
    f.write_all(b"</div>")?;
    f.write_all(b"</body>")?;
    f.write_all(b"</html>")?;
+   */
 
    Ok(())
 }

@@ -1,14 +1,16 @@
 use rdxl::{xtype,xrender};
 
 xtype!(
-   <!Script async_:bool={{false}} charset:String={{"UTF-8".to_string()}} defer:bool={{false}}
+   <!Script async_:bool={{false}} charset:String={{"UTF-8".to_string()}} defer:bool={{false}} integrity:String crossorigin:String
             src:String={{"".to_string()}} type_:String={{"application/javascript".to_string()}}>
      <?/>
    </Script>
 );
 xrender!(Script,<script {{if self.async_ {{async}}}}
                         {{if self.defer {{defer}}}}
+                        {{if self.crossorigin.len()>0 {{crossorigin={{self.crossorigin}}}}}}
                         {{if self.charset.len()>0 {{charset={{self.charset}}}}}}
+                        {{if self.integrity.len()>0 {{integrity={{self.integrity}}}}}}
                         {{if self.src.len()>0 {{src={{self.src}}}}}}
                         {{if self.type_.len()>0 {{"type"={{self.type_}}}}}}>
    {{ for cd in self.children.iter() {{
@@ -31,13 +33,14 @@ xrender!(Style,<style {{if self.media.len()>0 {{media={{self.media}}}}}}
 </style>);
 
 xtype!(<!Title><?/></Title>);
-xrender!(Title,{{ for c in self.children.iter() {{
+xrender!(Title,<title>{{ for c in self.children.iter() {{
    {{ let TitleChildren::Display(cd) = c; }}
    {{ cd }}
-}}}});
+}}}}</title>);
 
-xtype!(<!Link crossorigin:String href:String hreflang:String media:String referrerpolicy:String rel:String sizes:String title:String type_:String/>);
+xtype!(<!Link crossorigin:String href:String hreflang:String media:String integrity:String referrerpolicy:String rel:String sizes:String title:String type_:String/>);
 xrender!(Link,<link {{if self.crossorigin.len()>0 {{crossorigin={{self.crossorigin}}}}}}
+                    {{if self.integrity.len()>0 {{integrity={{self.integrity}}}}}}
                     {{if self.href.len()>0 {{href={{self.href}}}}}}
                     {{if self.hreflang.len()>0 {{hreflang={{self.hreflang}}}}}}
                     {{if self.media.len()>0 {{media={{self.media}}}}}}
@@ -63,6 +66,7 @@ xrender!(Base,<base {{if self.href.len()>0 {{href={{self.href}}}}}}
 xtype!(
   <!Html lang:String={{"en".to_string()}} doctype:String={{"html".to_string()}} xmlns:String={{"".to_string()}}>
     <?Title/>
+    <?Meta/>
     <?Script/>
     <?Style/>
     <?Link/>
@@ -70,11 +74,12 @@ xtype!(
     <?/>
   </Html>
 );
-xrender!(Html,{{ format!("<DOCTYPE {}>", self.doctype) }}
+xrender!(Html,{{ format!("<!DOCTYPE {}>", self.doctype) }}
 <html>
   <head>
     {{ for c in self.children.iter() {{
       {{ if let HtmlChildren::Title(cd) = c {{ {{cd}} }}
+         else if let HtmlChildren::Meta(cd) = c {{ {{cd}} }}
          else if let HtmlChildren::Script(cd) = c {{ {{cd}} }}
          else if let HtmlChildren::Style(cd) = c {{ {{cd}} }}
          else if let HtmlChildren::Link(cd) = c {{ {{cd}} }}
