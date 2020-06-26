@@ -78,10 +78,9 @@ xtype!(
 );
 
 fn show_hide_js(class_name:&str, id_name:&str) -> String {
-   format!(r#"'
-let cs = document.getElementsByClassName("{}");
-for(var ci=0; ci<cs.length; ci++){{ cs[ci].style.display = "none"; }}
-document.getElementById("{}").style.display = "initial";'"#, class_name, id_name)
+   format!(r#"let cs = document.getElementsByClassName('{}');
+              for(var ci=0; ci<cs.length; ci++){{ cs[ci].style.display = 'none'; }}
+              document.getElementById('{}').style.display = 'initial';"#, class_name, id_name)
 }
 
 xrender!(AlertPrimary, <div class="alert alert-primary alert-dismissible fade show" role="alert">
@@ -226,7 +225,7 @@ xrender!(IndexTabs, <div style="padding-top:10px;">
     {{ for (tabi,tab) in self.children.iter().enumerate() {{
       {{ let tab_id = format!("{}_{}", tabs_classname, tabi); }}
       {{ let IndexTabsChildren::IndexTab(tab) = tab; }}
-      <div id={{tab_id}} class={{tabs_classname}} style={{ if tabi==0 {{"''"}} else {{"'display:none'"}} }}>
+      <div id={{tab_id}} class={{tabs_classname}} style={{ if tabi==0 {{""}} else {{"display:none"}} }}>
         {{ for tc in tab.children.iter() {{
           {{ let IndexTabChildren::Display(d) = tc; }}
           {{ d }}

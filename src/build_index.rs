@@ -21,6 +21,34 @@ fn main() -> std::io::Result<()> {
           <div class="container">
             <h2><a href="https://github.com/andrew-johnson-4/rdxl">Rdxl Templating Examples</a></h2>
             <!IndexTabs>
+              <!IndexTab name="Inline Container Elements">
+                <?>
+                  <h3>Inline Container Elements</h3>
+                  <p>Table: <!Table>
+                    <!TableRow>
+                      <!TableCell><?>A</?></TableCell>
+                      <!TableCell><?>B</?></TableCell>
+                      <!TableCell><?>C</?></TableCell>
+                    </TableRow>
+                    <!TableRow>
+                      <!TableCell><?>1</?></TableCell>
+                      <!TableCell><?>3</?></TableCell>
+                      <!TableCell><?>2</?></TableCell>
+                    </TableRow>
+                    <!TableRow>
+                      <!TableCell><?>Q</?></TableCell>
+                      <!TableCell><?>W</?></TableCell>
+                      <!TableCell><?>E</?></TableCell>
+                    </TableRow>
+                  </Table></p>
+                  <p>List: <!List>
+                    <!ListItem><?>AB</?></ListItem>
+                    <!ListItem><?>CD</?></ListItem>
+                    <!ListItem><?>EF</?></ListItem>
+                    <!ListItem><?>GH</?></ListItem>
+                  </List></p>
+                </?>
+              </IndexTab>
               <!IndexTab name="Flexible Container Elements">
                 <?>
                   <h3>Flexible Container Elements</h3>
@@ -67,34 +95,6 @@ fn main() -> std::io::Result<()> {
 
    /*
    f.write_all(xhtml!(
-     <!IndexTab name="Inline Container Elements">
-       <?>
-         <h3>Inline Container Elements</h3>
-         <p>Table: <!Table>
-           <!TableRow>
-             <!TableCell><?>A</?></TableCell>
-             <!TableCell><?>B</?></TableCell>
-             <!TableCell><?>C</?></TableCell>
-           </TableRow>
-           <!TableRow>
-             <!TableCell><?>1</?></TableCell>
-             <!TableCell><?>3</?></TableCell>
-             <!TableCell><?>2</?></TableCell>
-           </TableRow>
-           <!TableRow>
-             <!TableCell><?>Q</?></TableCell>
-             <!TableCell><?>W</?></TableCell>
-             <!TableCell><?>E</?></TableCell>
-           </TableRow>
-         </Table></p>
-         <p>List: <!List>
-           <!ListItem><?>AB</?></ListItem>
-           <!ListItem><?>CD</?></ListItem>
-           <!ListItem><?>EF</?></ListItem>
-           <!ListItem><?>GH</?></ListItem>
-         </List></p>
-       </?>
-     </IndexTab>
      <!IndexTab name="Input Elements">
        <?>
          <h3>Input Elements</h3>
