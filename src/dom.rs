@@ -70,3 +70,23 @@ xtype!(
     <?/>
   </Html>
 );
+xrender!(Html,{{ format!("<DOCTYPE {}>", self.doctype) }}
+<html>
+  <head>
+    {{ for c in self.children.iter() {{
+      {{ if let HtmlChildren::Title(cd) = c {{ {{cd}} }}
+         else if let HtmlChildren::Script(cd) = c {{ {{cd}} }}
+         else if let HtmlChildren::Style(cd) = c {{ {{cd}} }}
+         else if let HtmlChildren::Link(cd) = c {{ {{cd}} }}
+         else if let HtmlChildren::Base(cd) = c {{ {{cd}} }}
+      }}
+    }} }}
+  </head>
+  <body>
+    {{ for c in self.children.iter() {{
+      {{ if let HtmlChildren::Display(cd) = c {{
+        {{ cd }}
+      }} }}
+    }} }}
+  </body>
+</html>);
