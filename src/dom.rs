@@ -71,6 +71,7 @@ xtype!(
     <?Style/>
     <?Link/>
     <?Base/>
+    <!Head><?/></Head>
     <?/>
   </Html>
 );
@@ -84,6 +85,12 @@ xrender!(Html,{{ format!("<!DOCTYPE {}>", self.doctype) }}
          else if let HtmlChildren::Style(cd) = c {{ {{cd}} }}
          else if let HtmlChildren::Link(cd) = c {{ {{cd}} }}
          else if let HtmlChildren::Base(cd) = c {{ {{cd}} }}
+         else if let HtmlChildren::Head(cd) = c {{
+           {{ for hd in cd.children.iter() {{
+             {{ let HeadChildren::Display(hd) = hd; }}
+             {{hd}}
+           }} }}
+         }}
       }}
     }} }}
   </head>
